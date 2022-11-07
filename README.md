@@ -115,4 +115,5 @@ export default App;
 ```
 
 #### Imagem de algumas variações
-<img src="img/buttons.png" width="350px">
+<img src="img/buttonsDefault.png" width="350px">
+<img src="img/buttonsMinimal.png" width="350px">
