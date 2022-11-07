@@ -98,10 +98,17 @@ pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :mo
 O botão insere os `children` em um componente de texto internamente, evitando o uso de mais um componente.
 
 ```tsx
-<Button
-    onPress={() => Alert.alert('Alert', 'Alert')}
-    design='default'
->
-    Exemplo
-</Button>
+import Button from '../components/Button';
+
+function App() {
+    return(
+        <Button
+            onPress={() => Alert.alert('Alert', 'Alert')}
+            design='default'
+        >
+            Exemplo
+        </Button>
+    );
+}
+export default App;
 ```
