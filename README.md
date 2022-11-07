@@ -50,7 +50,7 @@ pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 ```
 
 Inserir em `info.plist` o código abaixo
-```js
+```html
 <key>UIAppFonts</key>
 <array>
     <string>AntDesign.ttf</string>
@@ -75,6 +75,6 @@ Inserir em `info.plist` o código abaixo
 
 #### IOS
 Inserir em `podfile` o código
-```
+```js
 pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :modular_headers => true
 ```
