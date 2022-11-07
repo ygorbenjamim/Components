@@ -87,4 +87,8 @@ Propriedades
 | Prop | Tipo | Descrição | Requerido |
 | :--: | :--: | :--: | :--: |
 | onPress | `() => void` | Função que será executada ao clicar | Sim |
-| onPress | () => void | Função que será executada ao clicar | Sim |
+| disabled | `boolean` | Indica se o botão poderá ser clicado | Não |
+| loading | `boolean` | Indica se o botão está em estado de loading | Não |
+| outline | `boolean` | Indica se o estilo `outline` | Não |
+| outlineLight | `boolean` | Indica se o estilo `outlineLight` | Não |
+| design | `string` | Indica se o design 'default' ou 'minimal' | Não |
