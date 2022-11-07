@@ -117,5 +117,6 @@ export default App;
 #### Imagem de algumas variações
 ##### Design default
 <img src="img/buttonsDefault.png" width="350px">
+
 ##### Design Minimal
 <img src="img/buttonsMinimal.png" width="350px">
