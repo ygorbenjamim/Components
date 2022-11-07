@@ -115,5 +115,5 @@ export default App;
 ```
 
 #### Imagem de algumas variações
-<img src="img/buttons.png" width="100px">
+<img src="img/buttons.png" width="250px">
 ![Botões](img/buttons.png)
