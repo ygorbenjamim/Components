@@ -41,16 +41,16 @@ module.exports = {
     },
     assets: ['./src/assets/fonts'],
 };
-    ```
+```
 
 #### IOS
-Inserir em podfile o código abaixo
+Inserir em `podfile` o código abaixo
 ```
 pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 ```
 
-Inserir em info.plist o código abaixo
-```plist
+Inserir em `info.plist` o código abaixo
+```js
 <key>UIAppFonts</key>
 <array>
     <string>AntDesign.ttf</string>
@@ -74,7 +74,7 @@ Inserir em info.plist o código abaixo
 ### react-native-text-input-mask
 
 #### IOS
-Inserir em podfile o código
+Inserir em `podfile` o código
 ```
 pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :modular_headers => true
 ```
