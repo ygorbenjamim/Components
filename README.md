@@ -83,7 +83,7 @@ pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :mo
 
 ## Button
 
-Propriedades
+### Propriedades
 | Prop | Tipo | Descrição | Requerido |
 | :--: | :--: | :--: | :--: |
 | onPress | `() => void` | Função que será executada ao clicar | Sim |
@@ -91,4 +91,17 @@ Propriedades
 | loading | `boolean` | Indica se o botão está em estado de loading | Não |
 | outline | `boolean` | Indica se o estilo `outline` | Não |
 | outlineLight | `boolean` | Indica se o estilo `outlineLight` | Não |
-| design | `string` | Indica se o design 'default' ou 'minimal' | Não |
+| design | `string` | Indica o design `'default'` ou `'minimal'` | Não |
+
+### Exemplo
+
+O botão insere os `children` em um componente de texto internamente, evitando o uso de mais um componente.
+
+```tsx
+<Button
+    onPress={() => Alert.alert('Alert', 'Alert')}
+    design='default'
+>
+    Exemplo
+</Button>
+```
