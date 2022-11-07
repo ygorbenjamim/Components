@@ -115,4 +115,4 @@ export default App;
 ```
 
 #### Imagem de algumas variações
-[!("Botões")]["img/buttons.png"]
+!["Botões"](img/buttons.png)
