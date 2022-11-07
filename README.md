@@ -78,3 +78,12 @@ Inserir em `podfile` o código
 ```js
 pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :modular_headers => true
 ```
+
+# Uso
+
+## Button
+
+Propriedades
+| Prop | Tipo | Descrição | Requerido |
+| onPress | () => void | Função que será executada ao clicar | Sim |
+| onPress | () => void | Função que será executada ao clicar | Sim |
