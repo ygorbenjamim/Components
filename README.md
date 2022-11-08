@@ -43,6 +43,17 @@ module.exports = {
 };
 ```
 
+#### Android
+Inserir em `android/build.gradle` o código
+```js
+dependencies {
+    //...
+    implementation(project(':react-native-vector-icons')) // <- Adicionar essa linha
+}
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle" // <- Adicionar essa linha
+```
+
 #### IOS
 Inserir em `podfile` o código abaixo
 ```
