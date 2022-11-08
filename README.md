@@ -73,6 +73,23 @@ Inserir em `info.plist` o código abaixo
 
 ### react-native-text-input-mask
 
+#### Android
+Inserir em `android/build.gradle`o código
+```js
+buildscript {
+    ext {
+        // ...
+        kotlin_version = '1.6.10' // <- Adicionar essa linha
+    }
+
+    dependencies {
+        // ...
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" // <- Adicionar essa linha
+        // ...
+    }
+}
+```
+
 #### IOS
 Inserir em `podfile` o código
 ```js
