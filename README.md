@@ -10,7 +10,13 @@ yarn add react-hook-form
 yarn add react-native-vector-icons
 ```
 ```
+yarn add moment
+```
+```
 yarn add react-native-text-input-mask
+```
+```
+yarn add react-native-animatable
 ```
 
 ## Dependências de desenvolvedor
