@@ -9,12 +9,12 @@ interface IPicker {
     label: string;
 }
   
-interface ItemProps{
+interface IItemProps{
     value: IPicker;
     onPress: () => void;
 }
 
-const Item = ({ value, onPress }: ItemProps): JSX.Element => {
+const Item = ({ value, onPress }: IItemProps): JSX.Element => {
     return (
         <Container onPress={ onPress }>
             <Text>{ value.label }</Text>

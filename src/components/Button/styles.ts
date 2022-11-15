@@ -2,12 +2,12 @@ import styled, { css } from 'styled-components/native';
 import { useTheme } from 'styled-components';
 const { colors } = useTheme();
 
-interface outlineProps {
+interface IOutlineProps {
     outline?: boolean;
-    outlineLight?: boolean;
+    transparent?: boolean;
 }
 
-interface ContainerButtonProps extends outlineProps{
+interface IContainerButtonProps extends IOutlineProps{
     disabled?: boolean;
     design?: string;
 }
@@ -18,8 +18,9 @@ export const ContainerButton = styled.View`
     align-items: center;
 `;
 
-export const ContentButton = styled.TouchableOpacity<ContainerButtonProps>`
+export const ContentButton = styled.TouchableOpacity<IContainerButtonProps>`
     width: 88%;
+    min-height: 58px;
     padding: 15px;
     margin: 20px 0;
     justify-content: center;
@@ -28,7 +29,7 @@ export const ContentButton = styled.TouchableOpacity<ContainerButtonProps>`
     background-color: ${ colors.primary };
     border-color: ${ colors.primary };
 
-    ${({ outline, outlineLight, disabled, design }: ContainerButtonProps) => {
+    ${({ outline, transparent, design }: IContainerButtonProps) => {
         var result = ``;
         if(outline){
             result += css`
@@ -36,7 +37,7 @@ export const ContentButton = styled.TouchableOpacity<ContainerButtonProps>`
                 border-width: 1.5px;
             `;
         }
-        if(outlineLight){
+        if(transparent){
             result += css`
                 background-color: ${ colors.transparent };
             `;
@@ -55,12 +56,12 @@ export const ContentButton = styled.TouchableOpacity<ContainerButtonProps>`
     }}
 `;
 
-export const Label = styled.Text<outlineProps>`
+export const Label = styled.Text<IOutlineProps>`
     font-size: 20px;
     color: ${ colors.lighter };
 
-    ${({ outline, outlineLight }: outlineProps) => {
-        if(outline || outlineLight){
+    ${({ outline, transparent }: IOutlineProps) => {
+        if(outline || transparent){
             return css`
                 color: ${ colors.primary };
             `;

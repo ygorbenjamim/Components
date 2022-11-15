@@ -4,7 +4,6 @@ const { colors } = useTheme();
 
 export const ContainerHome = styled.SafeAreaView`
     flex: 1;
-    padding: 15px;
     justify-content: center;
     align-items: center;
     background-color: ${ colors.background };

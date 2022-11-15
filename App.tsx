@@ -4,6 +4,7 @@ import Home from './src/screens/Home';
 import { ThemeProvider } from 'styled-components';
 import defaultTheme from './src/styles/defaultTheme';
 import darkTheme from './src/styles/darkTheme';
+import Toast from './src/components/Toast';
 
 const App = () => {
   const deviceTheme = useColorScheme();

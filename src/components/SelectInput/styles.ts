@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components/native';
 import { useTheme } from 'styled-components';
 const { colors } = useTheme();
 
-interface ContentProps {
+interface IContentProps {
     design?: string;
 }
 
@@ -13,10 +13,10 @@ export const ContainerSelectInput = styled.View`
     align-items: center;
 `;
 
-export const ContentSelectInput = styled.View<ContentProps>`
+export const ContentSelectInput = styled.View<IContentProps>`
     width: 88%;
 
-    ${({ design }: ContentProps) => {
+    ${({ design }: IContentProps) => {
         if(design == 'minimal'){
             return css`
                 border-bottom-width: 1px;

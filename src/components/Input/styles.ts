@@ -4,7 +4,7 @@ import { useTheme } from 'styled-components';
 const { colors } = useTheme();
 
 
-interface ContentProps {
+interface IContentProps {
     design?: string;
 }
 
@@ -15,10 +15,10 @@ export const ContainerInput = styled.View`
     align-items: center;
 `;
 
-export const Content = styled.View<ContentProps>`
+export const Content = styled.View<IContentProps>`
     width: 88%;
 
-    ${({ design }: ContentProps) => {
+    ${({ design }: IContentProps) => {
         if(design == 'minimal'){
             return css`
                 border-bottom-width: 1px;

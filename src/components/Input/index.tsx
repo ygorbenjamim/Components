@@ -19,8 +19,9 @@ import {
     ButtonShow
 } from './styles';
 
-interface InputProps extends TextInputProps{
+interface IInputProps extends TextInputProps{
     label?: string;
+    requiredLabel?: boolean;
     maskFormat?: string;
     name: string;
     error?: string;
@@ -29,7 +30,7 @@ interface InputProps extends TextInputProps{
     design: string;
 }
 
-const Input = ({ label, name, error, control, maskFormat, password, design, ...rest }: InputProps): JSX.Element => {
+const Input = ({ label, requiredLabel, name, error, control, maskFormat, password, design, ...rest }: IInputProps): JSX.Element => {
     const { colors } = useTheme();
     const [eye, setEye] = useState('eye-off-outline');
 
@@ -52,7 +53,7 @@ const Input = ({ label, name, error, control, maskFormat, password, design, ...r
     return (
         <ContainerInput>
             <Content design={ design }>
-                { label && <Label>{ label }</Label> }
+                { label && <Label>{ label } { requiredLabel && <MCIcon name='asterisk' size={13} color={ colors.error }/> }</Label> }
                 <ContentRow>
                     <TextInput
                         onChangeText={ handleChangeValue }

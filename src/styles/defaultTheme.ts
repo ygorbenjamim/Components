@@ -1,22 +1,21 @@
 export default {
   colors: {
-    primary: '#FFBB33',
-    primary_light: '#BED0F1',
-    primary_dark: '#112345',
+    primary: '#CC7178',
+    primary_light: '#FFD9DA',
+    primary_dark: '#89023E',
 
-    secondary: '#546E7A',
-    secondary_light: '#819CA9',
-    secondary_dark: '#29434E',
+    secondary: '#D57967',
+    secondary_light: '#FFE3DB',
+    secondary_dark: '#890117',
 
     background: '#F2F2F2',
-    background_current_schedule: '#72A2FF',
 
     white: '#fff',
-    lighter: '#f7f7f7',
+    lighter: '#f9f9f9',
     light: '#DDD',
     regular: '#999',
     dark: '#666',
-    darker: '#333',
+    darker: '#343839',
     black: '#000',
 
     text_black: '#343839',
@@ -33,19 +32,5 @@ export default {
     darkTransparent: 'rgba(0,0,0,0.6)',
     whiteTransparent: 'rgba(255,255,255,0.3)',
   },
-
-  fonts: {
-    Roboto_Regular: 'System',
-    Roboto_Medium: 'System',
-    Roboto_Bold: 'System',
-  },
 };
-
-// Cores
-// #112345
-// #afcbff
-// #BED0F1
-// #D7F9FF
-// #F9FBF2
-// #FFEDE1
   
