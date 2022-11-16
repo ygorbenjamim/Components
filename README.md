@@ -213,7 +213,7 @@ export default App;
 | name | `string` | Referente a integração com `react-hook-form` | Sim |
 | control | `control` | Referente a integração com `react-hook-form` | Não |
 
-#### O tipo IPiker consiste na seguinte interface
+#### O tipo `IPiker` consiste na seguinte interface
 
 ```tsx
 interface IPicker {
@@ -260,7 +260,7 @@ export default App;
 | dialogList | `IDialogItemProps[]` | Variável com uma lista de diálogos | Sim |
 | setDialogList | `(dialogList: IDialogItemProps[]) => void` | Função que altera o valor da lista de diálogos | Sim |
 
-#### O tipo IDialogItemProps consiste na seguinte interface
+#### O tipo `IDialogItemProps` consiste na seguinte interface
 
 ```tsx
 interface IDialogItemProps {
@@ -275,7 +275,7 @@ interface IDialogItemProps {
 
 ### Exemplo
 
-O componente precisa ser incluído na `DOM`dentro do `return`, após isso, o seu valor poderá ser alterado por uma função e ao decorrer do código e vários diálogos distintos poderão ser utilizados. abaixo são apresentados o estado e a função recomendada. Perceba que também é necessário importar algumas `interfaces` para o `typescript`.
+O componente precisa ser incluído na `DOM`dentro do `return`, após isso, o seu valor poderá ser alterado por uma função e ao decorrer do código, vários diálogos distintos poderão ser utilizados. abaixo são apresentados o estado e a função recomendada. Perceba que também é necessário importar algumas `interfaces` para o `typescript`.
 
 #### Função recomendada
 ```tsx
@@ -337,3 +337,74 @@ export default App;
 
 ##### Design Minimal
 <img src="img/dialogMinimal.png" width="350px">
+
+## Toast
+
+### Propriedades
+| Prop | Tipo | Descrição | Requerido |
+| :--: | :--: | :--: | :--: |
+| toastList | `IToastItemProps[]` | Variável com uma lista de toast | Sim |
+| setToastList | `(toastList: IToastItemProps[]) => void` | Função que altera o valor da lista de toast | Sim |
+
+#### O tipo `IToastItemProps` consiste na seguinte interface
+
+```tsx
+interface IToastItemProps {
+    id: number;
+    title?: string;
+    subtitle: string;
+    type?: string; // 'success' | 'info' | 'danger' | 'warning'
+}
+```
+
+### Exemplo
+
+O componente precisa ser incluído na `DOM`dentro do `return`, após isso, o seu valor poderá ser alterado por uma função e ao decorrer do código, vários toast's distintos poderão ser utilizados. abaixo são apresentados o estado e a função recomendada. Perceba que também é necessário importar algumas `interfaces` para o `typescript`.
+
+#### Função recomendada
+```tsx
+const [toastList, setToastList] = useState<IToastItemProps[]>([]);
+
+const toast = (title: string, subtitle: string, type?: string) => {
+    setToastList([...toastList, {
+        id: toastList.length + 1,
+        title: title,
+        subtitle: subtitle,
+        type: !type ? 'success' : type
+    }]);
+}
+```
+
+```tsx
+import React, { useState } from 'react';
+import Toast, { IToastItemProps } from '../components/Toast';
+
+function App() {
+    const [toastList, setToastList] = useState<IToastItemProps[]>([]);
+
+    // Declaração da função
+    const toast = (title: string, subtitle: string, type?: string) => {
+        setToastList([...toastList, {
+            id: toastList.length + 1,
+            title: title,
+            subtitle: subtitle,
+            type: !type ? 'success' : type
+        }]);
+    }
+
+    // chamada da função. Exemplo 1
+    toast('Sucesso', 'Mensagem de sucesso.', 'success');
+
+    // chamada da função. Exemplo 2
+    toast('Informação', 'Mensagem de informação.', 'info');
+
+    return(
+        <Toast toastList={ toastList } setToastList={ setToastList }/>
+    );
+}
+export default App;
+```
+
+#### Imagem de algumas variações em cascata
+##### Design default
+<img src="img/toast.png" width="350px">
