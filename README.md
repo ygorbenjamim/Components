@@ -124,7 +124,7 @@ pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :mo
 | disabled | `boolean` | Indica se o botão poderá ser clicado | Não |
 | loading | `boolean` | Indica se o botão está em estado de loading | Não |
 | outline | `boolean` | Indica se o estilo `outline` | Não |
-| outlineLight | `boolean` | Indica se o estilo `outlineLight` | Não |
+| transparent | `boolean` | Indica se o background é `transparent` | Não |
 | design | `string` | Indica o design `'default'` ou `'minimal'` | Não |
 
 ### Exemplo
