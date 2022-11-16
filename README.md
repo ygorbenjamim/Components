@@ -138,8 +138,8 @@ import Button from '../components/Button';
 function App() {
     return(
         <Button
-            onPress={() => Alert.alert('Alert', 'Alert')}
             design='default'
+            onPress={() => Alert.alert('Alert', 'Alert')}
         >
             Exemplo
         </Button>
@@ -154,3 +154,47 @@ export default App;
 
 ##### Design Minimal
 <img src="img/buttonsMinimal.png" width="350px">
+
+## Input
+
+### Propriedades
+| Prop | Tipo | Descrição | Requerido |
+| :--: | :--: | :--: | :--: |
+| label | `string` | Etiqueta da entrada de texto | Não |
+| requiredLabel | `boolean` | Indicação visual para campo obrigatório | Não |
+| maskFormat | `string` | Máscara para o texto, utilizando valores dentro dos colchetes. Exemplo de valores: `'[0000]-[00]' | '[aa]/[aa]'` | Não |
+| name | `string` | Referente a integração com `react-hook-form` | Sim |
+| error | `string` | Mensagem de erro abaixo da entrada de texto | Não |
+| control | `control` | Referente a integração com `react-hook-form` | Não |
+| password | `boolean` | Indica se a entrada de texto receberá um valor de senha | Não |
+| design | `string` | Indica o design `'default'` ou `'minimal'` | Não |
+
+### Exemplo
+
+A entrada de texto herda todas as propriedades de um `TextInput` do React Native, portanto, poderá ser utilizado as demais `props`.
+
+```tsx
+import React from 'react';
+import Input from '../components/Input';
+
+function App() {
+    return(
+        <Input
+            label='Etiqueta'
+            name='name'
+            control={ control }
+            placeholder='Exemplo' // <- Prop herdada do TextInput
+            design='default'
+        />
+    );
+}
+export default App;
+```
+
+#### Imagem de algumas variações
+##### Design default
+<img src="img/inputsDefault.png" width="350px">
+
+##### Design Minimal
+<img src="img/inputsMinimal.png" width="350px">
+
