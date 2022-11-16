@@ -162,7 +162,7 @@ export default App;
 | :--: | :--: | :--: | :--: |
 | label | `string` | Etiqueta da entrada de texto | Não |
 | requiredLabel | `boolean` | Indicação visual para campo obrigatório | Não |
-| maskFormat | `string` | Máscara para o texto, utilizando valores dentro dos colchetes. Exemplo de valores: `'[0000]-[00]' | '[aa]/[aa]'` | Não |
+| maskFormat | `string` | Máscara para o texto, utilizando valores dentro dos colchetes. Exemplo de valores: `'[0000]-[00]' ou '[aa]/[aa]'` | Não |
 | name | `string` | Referente a integração com `react-hook-form` | Sim |
 | error | `string` | Mensagem de erro abaixo da entrada de texto | Não |
 | control | `control` | Referente a integração com `react-hook-form` | Não |
