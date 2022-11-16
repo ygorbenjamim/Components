@@ -74,8 +74,8 @@ const Dialog = ({
                             key={ i }
                         >
                             <Content
-                                animation={ dialog.design == 'minimal' ? 'bounceInLeft' : 'fadeInUp'}
-                                duration={ dialog.design == 'minimal' ? 500 : 350 }
+                                animation={ dialog.design == 'minimal' ? 'bounceInLeft' : 'slideInUp'}
+                                duration={ dialog.design == 'minimal' ? 500 : 300 }
                                 delay={100}
                                 useNativeDriver={true}
                                 design={ dialog.design }
