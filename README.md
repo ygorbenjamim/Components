@@ -198,3 +198,54 @@ export default App;
 ##### Design Minimal
 <img src="img/inputsMinimal.png" width="350px">
 
+## SelectInput
+
+### Propriedades
+| Prop | Tipo | Descrição | Requerido |
+| :--: | :--: | :--: | :--: |
+| onPress | `string` | Função que será executada ao selecionar uma opção | Não |
+| data | `IPicker[]` | Lista de opções | Não |
+| label | `string` | Etiqueta da entrada de texto | Não |
+| requiredLabel | `boolean` | Indicação visual para campo obrigatório | Não |
+| design | `string` | Indica o design `'default'` ou `'minimal'` | Não |
+| type | `string` | Indica o tipo de opções, podendo ser `'text' ou 'date' ou 'time'` | Não |
+| error | `string` | Mensagem de erro abaixo da entrada de texto | Não |
+| name | `string` | Referente a integração com `react-hook-form` | Sim |
+| control | `control` | Referente a integração com `react-hook-form` | Não |
+
+#### O tipo IPiker consiste na seguinte interface
+
+```tsx
+interface IPicker {
+    key: string | number;
+    label: string;
+}
+```
+
+### Exemplo
+
+```tsx
+import React from 'react';
+import Input from '../components/SelectInput';
+
+function App() {
+    return(
+        <SelectInput
+            data={ options }
+            label='Etiqueta'
+            type='text'
+            design='default'
+            name='name4'
+            control={ control }
+        />
+    );
+}
+export default App;
+```
+
+#### Imagem de algumas variações
+##### Design default
+<img src="img/selectInputsDefault.png" width="350px">
+
+##### Design Minimal
+<img src="img/selectInputsMinimal.png" width="350px">
