@@ -246,6 +246,8 @@ export default App;
 #### Imagem de algumas variações
 ##### Design default
 <img src="img/selectInputsDefault.png" width="350px">
+<img src="img/dateTimeDefault.png" width="350px">
 
 ##### Design Minimal
 <img src="img/selectInputsMinimal.png" width="350px">
+<img src="img/dateTimeMinimal.png" width="350px">
