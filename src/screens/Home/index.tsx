@@ -32,7 +32,7 @@ const Home = () => {
             options: options,
             loading: loading,
             design: design
-        }])
+        }]);
     }
 
     const toast = (title: string, subtitle: string, type?: string) => {

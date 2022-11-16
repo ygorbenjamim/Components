@@ -251,3 +251,89 @@ export default App;
 ##### Design Minimal
 <img src="img/selectInputsMinimal.png" width="350px">
 <img src="img/dateTimeMinimal.png" width="350px">
+
+## Dialog
+
+### Propriedades
+| Prop | Tipo | Descrição | Requerido |
+| :--: | :--: | :--: | :--: |
+| dialogList | `IDialogItemProps[]` | Variável com uma lista de diálogos | Sim |
+| setDialogList | `(dialogList: IDialogItemProps[]) => void` | Função que altera o valor da lista de diálogos | Sim |
+
+#### O tipo IDialogItemProps consiste na seguinte interface
+
+```tsx
+interface IDialogItemProps {
+    id: number;
+    design?: string;
+    title?: string;
+    subtitle?: string;
+    options?: IOptionsProp[];
+    loading?: boolean;
+}
+```
+
+### Exemplo
+
+O componente precisa ser incluído na `DOM`dentro do `return`, após isso, o seu valor poderá ser alterado por uma função e ao decorrer do código e vários diálogos distintos poderão ser utilizados. abaixo são apresentados o estado e a função recomendada. Perceba que também é necessário importar algumas `interfaces` para o `typescript`.
+
+#### Função recomendada
+```tsx
+const [dialogList, setDialogList] = useState<IDialogItemProps[]>([]);
+
+const dialog = (title: string, subtitle: string, options?: IOptionsProp[], loading?: boolean) => {
+    setDialogList([...dialogList, {
+        id: dialogList.length + 1,
+        title: title,
+        subtitle: subtitle,
+        options: options,
+        loading: loading,
+        design: design
+    }]);
+}
+```
+
+```tsx
+import React, { useState } from 'react';
+import Dialog, { IDialogItemProps, IOptionsProp } from '../components/Dialog';
+
+function App() {
+    const [dialogList, setDialogList] = useState<IDialogItemProps[]>([]);
+
+    // Declaração da função
+    const dialog = (title: string, subtitle: string, options?: IOptionsProp[], loading?: boolean) => {
+        setDialogList([...dialogList, {
+            id: dialogList.length + 1,
+            title: title,
+            subtitle: subtitle,
+            options: options,
+            loading: loading,
+            design: design
+        }]);
+    }
+
+    // chamada da função. Exemplo 1
+    dialog('Título', 'Subtítulo');
+
+    // chamada da função. Exemplo 2
+    dialog('', 'Subtítulo', [
+        { text: 'Opção 1', onPress: () => Alert.alert('Chamada de função') },
+        { text: 'Opção 2', onPress: () => Alert.alert('Chamada de função') },
+        { text: 'Opção 3', onPress: () => Alert.alert('Chamada de função') },
+        { text: 'Opção 4', onPress: () => Alert.alert('Chamada de função') },
+        { text: 'Cancelar', onPress: () => {} }
+    ]);
+
+    return(
+        <Dialog dialogList={ dialogList } setDialogList={ setDialogList } />
+    );
+}
+export default App;
+```
+
+#### Imagem de algumas variações
+##### Design default
+<img src="img/dialogDefault.png" width="350px">
+
+##### Design Minimal
+<img src="img/dialogMinimal.png" width="350px">
