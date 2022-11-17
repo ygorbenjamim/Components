@@ -15,34 +15,19 @@ import {
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import SelectInput from '../../components/SelectInput';
-import Dialog, { IDialogItemProps, IOptionsProp } from '../../components/Dialog';
-import Toast, { IToastItemProps } from '../../components/Toast';
+import Dialog from '../../components/Dialog';
+import Toast from '../../components/Toast';
+
+// Hooks
+import useToast from '../../components/Toast/hooks';
+import useDialog from '../../components/Dialog/hooks';
 
 /* behavior={Platform.OS === 'ios' ? 'padding' : undefined} */
 
 const Home = () => {
-    const [dialogList, setDialogList] = useState<IDialogItemProps[]>([]);
-    const [toastList, setToastList] = useState<IToastItemProps[]>([]);
 
-    const dialog = (title: string, subtitle: string, options?: IOptionsProp[], loading?: boolean) => {
-        setDialogList([...dialogList, {
-            id: dialogList.length + 1,
-            title: title,
-            subtitle: subtitle,
-            options: options,
-            loading: loading,
-            design: design
-        }]);
-    }
-
-    const toast = (title: string, subtitle: string, type?: string) => {
-        setToastList([...toastList, {
-            id: toastList.length + 1,
-            title: title,
-            subtitle: subtitle,
-            type: !type ? 'success' : type
-        }]);
-    }
+    const { toast, toastList, setToastList } = useToast();
+    const { dialog, dialogList, setDialogList } = useDialog();
     
     const {
         control,
@@ -67,7 +52,7 @@ const Home = () => {
     }
 
     const handleDialog = () => {
-        dialog('Título', 'Subtítulo');
+        dialog('Título', 'Subtítulo', undefined, design);
     }
 
     const handleDialog2 = () => {
@@ -77,11 +62,11 @@ const Home = () => {
             { text: 'Opção 3', onPress: () => Alert.alert('Chamada de função') },
             { text: 'Opção 4', onPress: () => Alert.alert('Chamada de função') },
             { text: 'Cancelar', onPress: () => {} }
-        ]);
+        ], design);
     }
 
     const handleDialog3 = () => {
-        dialog('Carregando...', 'Aguarde um momento.', undefined, true);
+        dialog('Carregando...', 'Aguarde um momento.', undefined, design, true);
 
         setTimeout(() => {
             setDialogList([]);

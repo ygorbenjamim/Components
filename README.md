@@ -275,42 +275,16 @@ interface IDialogItemProps {
 
 ### Exemplo
 
-O componente precisa ser incluído na `DOM`dentro do `return`, após isso, o seu valor poderá ser alterado por uma função e ao decorrer do código, vários diálogos distintos poderão ser utilizados. abaixo são apresentados o estado e a função recomendada. Perceba que também é necessário importar algumas `interfaces` para o `typescript`.
-
-#### Função recomendada
-```tsx
-const [dialogList, setDialogList] = useState<IDialogItemProps[]>([]);
-
-const dialog = (title: string, subtitle: string, options?: IOptionsProp[], loading?: boolean) => {
-    setDialogList([...dialogList, {
-        id: dialogList.length + 1,
-        title: title,
-        subtitle: subtitle,
-        options: options,
-        loading: loading,
-        design: design
-    }]);
-}
-```
+O componente precisa ser incluído na `DOM`dentro do `return`, após isso, o seu valor poderá ser alterado por uma função e ao decorrer do código, vários diálogos distintos poderão ser utilizados. Toda a lógica de chamada foi abstraída para um hook.
 
 ```tsx
 import React, { useState } from 'react';
-import Dialog, { IDialogItemProps, IOptionsProp } from '../components/Dialog';
+import Dialog from '../components/Dialog';
+// Hook
+import useDialog from '../../components/Dialog/hooks';
 
 function App() {
-    const [dialogList, setDialogList] = useState<IDialogItemProps[]>([]);
-
-    // Declaração da função
-    const dialog = (title: string, subtitle: string, options?: IOptionsProp[], loading?: boolean) => {
-        setDialogList([...dialogList, {
-            id: dialogList.length + 1,
-            title: title,
-            subtitle: subtitle,
-            options: options,
-            loading: loading,
-            design: design
-        }]);
-    }
+    const { dialog, dialogList, setDialogList } = useDialog();
 
     // chamada da função. Exemplo 1
     dialog('Título', 'Subtítulo');
@@ -359,38 +333,17 @@ interface IToastItemProps {
 
 ### Exemplo
 
-O componente precisa ser incluído na `DOM`dentro do `return`, após isso, o seu valor poderá ser alterado por uma função e ao decorrer do código, vários toast's distintos poderão ser utilizados. abaixo são apresentados o estado e a função recomendada. Perceba que também é necessário importar algumas `interfaces` para o `typescript`.
-
-#### Função recomendada
-```tsx
-const [toastList, setToastList] = useState<IToastItemProps[]>([]);
-
-const toast = (title: string, subtitle: string, type?: string) => {
-    setToastList([...toastList, {
-        id: toastList.length + 1,
-        title: title,
-        subtitle: subtitle,
-        type: !type ? 'success' : type
-    }]);
-}
-```
+O componente precisa ser incluído na `DOM`dentro do `return`, após isso, o seu valor poderá ser alterado por uma função e ao decorrer do código, vários toast's distintos poderão ser utilizados. Toda a lógica de chamada foi abstraída para um hook.
 
 ```tsx
 import React, { useState } from 'react';
-import Toast, { IToastItemProps } from '../components/Toast';
+import Toast from '../components/Toast';
+
+// Hooks
+import useToast from '../../components/Toast/hooks';
 
 function App() {
-    const [toastList, setToastList] = useState<IToastItemProps[]>([]);
-
-    // Declaração da função
-    const toast = (title: string, subtitle: string, type?: string) => {
-        setToastList([...toastList, {
-            id: toastList.length + 1,
-            title: title,
-            subtitle: subtitle,
-            type: !type ? 'success' : type
-        }]);
-    }
+    const { toast, toastList, setToastList } = useToast();
 
     // chamada da função. Exemplo 1
     toast('Sucesso', 'Mensagem de sucesso.', 'success');
