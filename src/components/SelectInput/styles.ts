@@ -43,7 +43,7 @@ export const ButtonShow = styled.TouchableOpacity`
 `;
 
 export const Label = styled.Text`
-    font-size: 14px;
+    font-size: ${ colors.font_size_small };
     font-weight: bold;
     color: ${ colors.primary_dark };
     margin-top: 7px;
@@ -52,13 +52,13 @@ export const Label = styled.Text`
 export const Placeholder = styled.Text`
     flex: 1;
     padding: 15px 0;
-    font-size: 18px;
+    font-size: ${ colors.font_size_normal };
     color: ${ colors.placeholder }
 `;
 
 export const Value = styled.Text`
     padding: 15px 0 15px 4px;
-    font-size: 18px;
+    font-size: ${ colors.font_size_normal };
     color: ${ colors.darker };
 `;
 
@@ -92,7 +92,7 @@ export const BtnCloseModal = styled.TouchableHighlight`
 `;
 
 export const InputFilter = styled.TextInput`
-  font-size: 17px;
+  font-size: ${ colors.font_size_normal };
   padding: 15px;
   margin-bottom: 5px;
 `;
@@ -100,7 +100,7 @@ export const InputFilter = styled.TextInput`
 export const TextError = styled.Text`
     width: 88%;
     margin-top: 10px;
-    font-size: 15px;
+    font-size: ${ colors.font_size_small };
     font-weight: bold;
     color: ${ colors.error };
     text-align: justify;

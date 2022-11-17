@@ -57,7 +57,7 @@ export const ContentButton = styled.TouchableOpacity<IContainerButtonProps>`
 `;
 
 export const Label = styled.Text<IOutlineProps>`
-    font-size: 20px;
+    font-size: ${ colors.font_size_large };
     color: ${ colors.lighter };
 
     ${({ outline, transparent }: IOutlineProps) => {

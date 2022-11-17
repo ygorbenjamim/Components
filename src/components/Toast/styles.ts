@@ -38,7 +38,7 @@ export const ContentColumn = styled.View`
 `;
 
 export const Title = styled.Text`
-    font-size: 15px;
+    font-size: ${ colors.font_size_small };
     font-weight: bold;
     color: ${ colors.success };
 
@@ -67,7 +67,7 @@ export const Title = styled.Text`
 `;
 
 export const SubTitle = styled.Text`
-    font-size: 13px;
+    font-size: ${ colors.font_size_small };
     color: ${ colors.regular };
 `;
 

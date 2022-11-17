@@ -67,13 +67,13 @@ export const Scroll = styled.ScrollView`
 
 export const Title = styled.Text`
   color: ${ colors.primary };
-  font-size: 20px;
+  font-size: ${ colors.font_size_large };
   font-weight: bold;
 `;
 
 export const Subtitle = styled.Text`
   color: ${ colors.primary_dark };
-  font-size: 17px;
+  font-size: ${ colors.font_size_normal };
   margin-top: 10px;
 `;
 
@@ -112,7 +112,7 @@ export const ButtonOption = styled.TouchableOpacity`
 `;
 
 export const ButtonOptionLabel = styled.Text`
-  font-size: 17px;
+  font-size: ${ colors.font_size_normal };
   color: ${ colors.lighter };
   margin: 5px;
 `;

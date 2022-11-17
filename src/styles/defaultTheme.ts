@@ -31,6 +31,10 @@ export default {
     transparent: 'transparent',
     darkTransparent: 'rgba(0,0,0,0.6)',
     whiteTransparent: 'rgba(255,255,255,0.3)',
+
+    font_size_small: '15px',
+    font_size_normal: '17px',
+    font_size_large: '20px'
   },
 };
   
