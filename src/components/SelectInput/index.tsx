@@ -135,7 +135,7 @@ const SelectInput = ({ onPress, data, label, requiredLabel, design, type, error,
                     </ButtonShow>
                 </ContentRow>
             </ContentSelectInput>
-            <TextError>{ error }</TextError>
+            { error &&  <TextError>{ error }</TextError> }
 
             {/* Modal para selecionar opções de texto */}
             <Modal

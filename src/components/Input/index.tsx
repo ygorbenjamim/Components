@@ -71,7 +71,7 @@ const Input = ({ label, requiredLabel, name, error, control, maskFormat, passwor
                     }
                 </ContentRow>
             </Content>
-            <TextError>{ error }</TextError>
+            { error &&  <TextError>{ error }</TextError> }
         </ContainerInput>
     );
 }
