@@ -29,7 +29,7 @@ export interface IDataFlatListProp {
 
 export interface IDialogItemProps {
     id: number;
-    design?: string;
+    design?: 'default' | 'minimal';
     title?: string;
     subtitle?: string;
     options?: IOptionsProp[];

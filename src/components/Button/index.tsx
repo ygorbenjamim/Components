@@ -15,7 +15,7 @@ interface IButtonProps {
     loading?: boolean;
     outline?: boolean;
     transparent?: boolean;
-    design: string;
+    design: 'default' | 'minimal';
 }
 
 const Button = ({ children, onPress, disabled, loading, outline, transparent, design } : IButtonProps): JSX.Element => {

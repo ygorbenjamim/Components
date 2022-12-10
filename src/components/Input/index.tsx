@@ -27,7 +27,7 @@ interface IInputProps extends TextInputProps{
     error?: string;
     control?: Control<FieldValue<FieldValues>>;
     password?: boolean;
-    design: string;
+    design: 'default' | 'minimal';
 }
 
 const Input = ({ label, requiredLabel, name, error, control, maskFormat, password, design, ...rest }: IInputProps): JSX.Element => {

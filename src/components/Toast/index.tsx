@@ -14,7 +14,7 @@ export interface IToastItemProps {
     id: number;
     title?: string;
     subtitle: string;
-    type?: string; // 'success' | 'info' | 'danger' | 'warning'
+    type?: 'success' | 'info' | 'danger' | 'warning';
 }
 
 interface IToastProps {

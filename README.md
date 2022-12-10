@@ -265,7 +265,7 @@ export default App;
 ```tsx
 interface IDialogItemProps {
     id: number;
-    design?: string;
+    design?: 'default' | 'minimal';
     title?: string;
     subtitle?: string;
     options?: IOptionsProp[];
@@ -327,7 +327,7 @@ interface IToastItemProps {
     id: number;
     title?: string;
     subtitle: string;
-    type?: string; // 'success' | 'info' | 'danger' | 'warning'
+    type?: 'success' | 'info' | 'danger' | 'warning';
 }
 ```
 

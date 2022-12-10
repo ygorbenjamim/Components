@@ -41,8 +41,8 @@ interface ISelectInputProps {
     data?: IPicker[];
     label?: string;
     requiredLabel?: boolean;
-    design: string;
-    type: string | any; // 'text' | 'date' | 'time'
+    design: 'default' | 'minimal';
+    type: 'text' | 'date' | 'time' | any;
     error?: string;
     name: string,
     control: Control<FieldValue<FieldValues>>;
