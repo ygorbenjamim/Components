@@ -6,6 +6,7 @@ const { colors } = useTheme();
 interface IModalAnimatedProp extends Animatable.AnimatableProperties<any> {
   style?: any;
   design?: string;
+  isCancel?: boolean;
 }
 
 export const ContainerDialog = styled.View`
@@ -36,12 +37,13 @@ export const ContainerClose = styled.TouchableHighlight`
         justify-content: flex-end;
       `;
     }
-  }}
+  }};
 `;
 
 export const Content = Animatable.createAnimatableComponent<any>(styled.View<IModalAnimatedProp>`
   background-color: ${ colors.background };
   padding: 15px;
+  max-height: 70%;
 
   ${({ design }: IModalAnimatedProp) => {
     if(design == 'minimal'){
@@ -58,11 +60,11 @@ export const Content = Animatable.createAnimatableComponent<any>(styled.View<IMo
         padding-top: 35px;
       `;
     }
-  }}
+  }};
 `);
 
 export const Scroll = styled.ScrollView`
-    max-height: 60%;
+  max-height: 60%;
 `;
 
 export const Title = styled.Text`
@@ -97,24 +99,42 @@ export const ButtonOption = styled.TouchableOpacity`
   margin-top: 5px;
   background-color: ${ colors.primary };
 
-  ${({ design }: IModalAnimatedProp) => {
+  ${({ design, isCancel }: IModalAnimatedProp) => {
+    var cssResult = css``;
     if(design == 'minimal'){
-      return css`
+      cssResult += css`
         border-radius: 50px;
       `;
     }
     if(design == 'default'){
-      return css`
+      cssResult += css`
         border-radius: 11px;
       `;
     }
-  }}
+    if(isCancel){
+      cssResult += css`
+        background-color: transparent;
+        border-width: 2px;
+        border-color: #CC7178;
+        //border-color: ${ colors.primary };
+      `;
+    }
+    return cssResult;
+  }};
 `;
 
 export const ButtonOptionLabel = styled.Text`
   font-size: ${ colors.font_size_normal };
   color: ${ colors.lighter };
   margin: 5px;
+
+  ${({ isCancel }) => {
+    if(isCancel){
+      return css`
+        color: ${ colors.primary };
+      `;
+    }
+  }};
 `;
 
 export const FlatList = styled.FlatList`

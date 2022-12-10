@@ -3,12 +3,12 @@ import { useTheme } from 'styled-components';
 const { colors } = useTheme();
 
 interface IOutlineProps {
+    enabled?: boolean;
     outline?: boolean;
     transparent?: boolean;
 }
 
 interface IContainerButtonProps extends IOutlineProps{
-    disabled?: boolean;
     design?: string;
 }
 
@@ -18,7 +18,7 @@ export const ContainerButton = styled.View`
     align-items: center;
 `;
 
-export const ContentButton = styled.TouchableOpacity<IContainerButtonProps>`
+export const ContentButton = styled.TouchableOpacity`
     width: 88%;
     min-height: 58px;
     padding: 15px;
@@ -29,44 +29,56 @@ export const ContentButton = styled.TouchableOpacity<IContainerButtonProps>`
     background-color: ${ colors.primary };
     border-color: ${ colors.primary };
 
-    ${({ outline, transparent, design }: IContainerButtonProps) => {
-        var result = ``;
+    ${({ outline, transparent, design, enabled }: IContainerButtonProps) => {
+        var cssResult = css``;
+        if(!enabled){
+            cssResult += css`
+                background-color: #444849;
+            `;
+        }
         if(outline){
-            result += css`
+            cssResult += css`
                 background-color: ${ colors.transparent };
                 border-width: 1.5px;
             `;
         }
         if(transparent){
-            result += css`
-                background-color: ${ colors.transparent };
+            cssResult += css`
+                background-color: transparent;
             `;
         }
         if(design == 'minimal'){
-            result += css`
+            cssResult += css`
                 border-radius: 50px;
             `;
         }
         if(design == 'default'){
-            result += css`
+            cssResult += css`
                 border-radius: 11px;
             `;
         }
-        return result;
-    }}
+        return cssResult;
+    }};
 `;
 
 export const Label = styled.Text<IOutlineProps>`
-    font-size: ${ colors.font_size_large };
+    font-size: ${ colors.font_size_normal };
     color: ${ colors.lighter };
 
-    ${({ outline, transparent }: IOutlineProps) => {
+    ${({ outline, transparent, enabled }: IOutlineProps) => {
+        var cssResult = css``;
+        if(!enabled){
+            cssResult += css`
+                color: #999;
+            `;
+        }
         if(outline || transparent){
-            return css`
+            cssResult = css`
                 color: ${ colors.primary };
             `;
         }
-    }}
+        return cssResult;
+    }};
 `;
 
 export const Modal = styled.Modal`

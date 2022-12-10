@@ -27,11 +27,12 @@ const Button = ({ children, onPress, disabled, loading, outline, transparent, de
                 outline={ outline }
                 transparent={ transparent }
                 design={ design }
+                enabled={ !disabled }
             >
                 {
                     loading
                     ? <ActivityIndicator size="small" color="white"/>
-                    : <Label outline={ outline } transparent={ transparent }>{children}</Label>
+                    : <Label outline={ outline } transparent={ transparent } enabled={ !disabled }>{children}</Label>
                 }
             </ContentButton>
 

@@ -45,7 +45,6 @@ const Toast = ({ toastList, setToastList }: IToastProps): JSX.Element => {
                     <Content
                         animation='fadeInDown'
                         duration={ 300 }
-                        delay={100}
                         useNativeDriver={true}
                         key={ i }
                     >

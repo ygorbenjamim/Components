@@ -70,13 +70,12 @@ const Dialog = ({
                             design={ dialog.design }
                             activeOpacity={1}
                             underlayColor={ colors.darkTransparent }
-                            onPress={ !dialog.loading ? () => handleRemove(dialog.id) : () => {} }
+                            onPress={ !dialog.loading && dialog.design == 'default' ? () => handleRemove(dialog.id) : () => {} }
                             key={ i }
                         >
                             <Content
                                 animation={ dialog.design == 'minimal' ? 'bounceInLeft' : 'fadeInUp'}
-                                duration={ dialog.design == 'minimal' ? 500 : 400 }
-                                delay={300}
+                                duration={ 350 }
                                 useNativeDriver={true}
                                 design={ dialog.design }
                             >
@@ -99,8 +98,19 @@ const Dialog = ({
                                                 <ButtonOption
                                                     onPress={ () => handlePressOption(item, dialog.id) }
                                                     design={ dialog.design }
+                                                    isCancel={
+                                                        item.text.toUpperCase() == 'CANCELAR' ||
+                                                        item.text.toUpperCase() == 'VOLTAR' ||
+                                                        item.text.toUpperCase() == 'NÃO'
+                                                    }
                                                 >
-                                                    <ButtonOptionLabel numberOfLines={1}>{item.text}</ButtonOptionLabel>
+                                                    <ButtonOptionLabel numberOfLines={1} isCancel={
+                                                        item.text.toUpperCase() == 'CANCELAR' ||
+                                                        item.text.toUpperCase() == 'VOLTAR' ||
+                                                        item.text.toUpperCase() == 'NÃO'
+                                                    }>
+                                                        {item.text}
+                                                    </ButtonOptionLabel>
                                                 </ButtonOption>
                                         }
                                         ListEmptyComponent={

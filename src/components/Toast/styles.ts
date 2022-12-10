@@ -14,7 +14,6 @@ export const ContainerToast = styled.View`
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    padding-top: 40px;
     z-index: 1;
 `;
 
@@ -25,9 +24,10 @@ export const Content = Animatable.createAnimatableComponent<any>(styled.View`
     width: 94%;
     min-height: 50px;
     padding: 7px 15px;
+    margin-top: 5px;
     margin-bottom: 5px;
     border-radius: 13px;
-    background-color: ${ colors.lighter };
+    background-color: ${ colors.darker };
 `);
 
 export const ContentColumn = styled.View`
