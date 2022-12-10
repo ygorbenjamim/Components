@@ -4,13 +4,13 @@ import { IOptionsProp, IDialogItemProps } from '..';
 interface IuseDialogReturn {
     dialogList: IDialogItemProps[];
     setDialogList: (listDialog: IDialogItemProps[]) => void;
-    dialog: (title: string, subtitle: string, options?: IOptionsProp[], design?: string, loading?: boolean) => void;
+    dialog: (title: string, subtitle: string, options?: IOptionsProp[], design?: 'default' | 'minimal', loading?: boolean) => void;
 }
 
 function useDialog(): IuseDialogReturn {
     const [dialogList, setDialogList] = useState<IDialogItemProps[]>([]);
 
-    const dialog = (title: string, subtitle: string, options?: IOptionsProp[], design?: string, loading?: boolean) => {
+    const dialog = (title: string, subtitle: string, options?: IOptionsProp[], design?: 'default' | 'minimal', loading?: boolean) => {
         setDialogList([...dialogList, {
             id: dialogList.length + 1,
             title: title,
