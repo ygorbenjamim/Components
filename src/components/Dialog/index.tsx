@@ -64,9 +64,10 @@ const Dialog = ({dialogList, setDialogList}: IDialogProps): JSX.Element => {
             activeOpacity={1}
             underlayColor={colors.darkTransparent}
             onPress={
-              !dialog.loading && dialog.design == 'default'
+              () => {}
+              /* !dialog.loading && dialog.design == 'default'
                 ? () => handleRemove(dialog.id)
-                : () => {}
+                : () => {} */
             }
             key={i}>
             <Content
