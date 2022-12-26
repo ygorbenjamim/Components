@@ -1,68 +1,65 @@
-import styled, { css } from 'styled-components/native';
+import styled, {css} from 'styled-components/native';
 import TextInputMaskRN from 'react-native-text-input-mask';
-import { useTheme } from 'styled-components';
-const { colors } = useTheme();
-
 
 interface IContentProps {
-    design?: string;
+  design?: string;
 }
 
 export const ContainerInput = styled.View`
-    width: 100%;
-    margin: 20px 0;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  margin: 20px 0;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Content = styled.View<IContentProps>`
-    width: 88%;
+  width: 88%;
 
-    ${({ design }: IContentProps) => {
-        if(design == 'minimal'){
-            return css`
-                border-bottom-width: 1px;
-                border-bottom-color: ${ colors.primary };
-            `;
-        }
-        if(design == 'default'){
-            return css`
-                border-radius: 11px;
-                background-color: ${ colors.lighter };
-                padding: 0 15px;
-            `;
-        }
-    }}
+  ${({design}: IContentProps) => {
+    if (design == 'minimal') {
+      return css`
+        border-bottom-width: 1px;
+        border-bottom-color: ${(props: any) => props.theme.colors.primary};
+      `;
+    }
+    if (design == 'default') {
+      return css`
+        border-radius: 11px;
+        background-color: ${(props: any) => props.theme.colors.lighter};
+        padding: 0 15px;
+      `;
+    }
+  }}
 `;
 
 export const ContentRow = styled.View`
-    flex-direction: row;
-    align-items: center;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const ButtonShow = styled.TouchableOpacity`
-    border-radius: 13px;
+  border-radius: 13px;
 `;
 
 export const Label = styled.Text`
-    font-size: ${ colors.font_size_small };
-    font-weight: bold;
-    color: ${ colors.primary_dark };
-    margin-top: 7px;
+  font-size: ${(props: any) => props.theme.fonts.size.small};
+  font-weight: bold;
+  color: ${(props: any) => props.theme.colors.primary};
+  margin-top: 7px;
 `;
 
 export const TextInput = styled(TextInputMaskRN)`
-    flex: 1;
-    padding: 15px 0;
-    font-size: ${ colors.font_size_normal };
-    color: #112345;
+  flex: 1;
+  padding: 15px 0;
+  font-size: ${(props: any) => props.theme.fonts.size.normal};
+  color: #112345;
 `;
 
 export const TextError = styled.Text`
-    width: 88%;
-    margin-top: 10px;
-    font-size: ${ colors.font_size_small };
-    font-weight: bold;
-    color: ${ colors.error };
-    text-align: justify;
+  width: 88%;
+  margin-top: 10px;
+  font-size: ${(props: any) => props.theme.fonts.size.small};
+  font-weight: bold;
+  color: ${(props: any) => props.theme.colors.error};
+  text-align: justify;
 `;

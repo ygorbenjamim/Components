@@ -1,18 +1,18 @@
 import React from 'react';
-import { useColorScheme } from 'react-native';
 import Home from './src/screens/Home';
-import { ThemeProvider } from 'styled-components';
+
+// Tema
+import {useColorScheme} from 'react-native';
+import {ThemeProvider} from 'styled-components';
 import defaultTheme from './src/styles/defaultTheme';
 import darkTheme from './src/styles/darkTheme';
-import Toast from './src/components/Toast';
 
 const App = () => {
+  // Tema do dispositivo
   const deviceTheme = useColorScheme();
-  var myTheme = defaultTheme;
-  if(deviceTheme == 'dark') myTheme = darkTheme;
 
   return (
-    <ThemeProvider theme={ myTheme }>
+    <ThemeProvider theme={deviceTheme == 'dark' ? darkTheme : defaultTheme}>
       <Home />
     </ThemeProvider>
   );

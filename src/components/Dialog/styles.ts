@@ -1,12 +1,15 @@
-import styled, { css } from 'styled-components/native';
+import styled, {css} from 'styled-components/native';
 import * as Animatable from 'react-native-animatable';
-import { useTheme } from 'styled-components';
-const { colors } = useTheme();
+
+interface IBaseProps {
+  isCancel?: boolean;
+  design?: 'default' | 'minimal';
+}
 
 interface IModalAnimatedProp extends Animatable.AnimatableProperties<any> {
   style?: any;
-  design?: string;
   isCancel?: boolean;
+  design?: 'default' | 'minimal';
 }
 
 export const ContainerDialog = styled.View`
@@ -18,21 +21,21 @@ export const ContainerDialog = styled.View`
 
 export const Modal = styled.Modal``;
 
-export const ContainerClose = styled.TouchableHighlight`
+export const ContainerClose = styled.TouchableHighlight<IBaseProps>`
   flex: 1;
   width: 100%;
   height: 100%;
   position: absolute;
   align-items: center;
-  background-color: ${ colors.darkTransparent };
+  background-color: ${(props: any) => props.theme.colors.darkTransparent};
 
-  ${({ design }: IModalAnimatedProp) => {
-    if(design == 'minimal'){
+  ${({design}: IModalAnimatedProp) => {
+    if (design == 'minimal') {
       return css`
         justify-content: center;
       `;
     }
-    if(design == 'default'){
+    if (design == 'default') {
       return css`
         justify-content: flex-end;
       `;
@@ -40,43 +43,46 @@ export const ContainerClose = styled.TouchableHighlight`
   }};
 `;
 
-export const Content = Animatable.createAnimatableComponent<any>(styled.View<IModalAnimatedProp>`
-  background-color: ${ colors.background };
-  padding: 15px;
-  max-height: 70%;
+export const Content =
+  Animatable.createAnimatableComponent<any>(styled.View<IModalAnimatedProp>`
+    background-color: ${(props: any) => props.theme.colors.background};
+    padding: 15px;
+    max-height: 70%;
+    justify-content: space-between;
 
-  ${({ design }: IModalAnimatedProp) => {
-    if(design == 'minimal'){
-      return css`
-        width: 87%;
-        border-radius: 20px;
-      `;
-    }
-    if(design == 'default'){
-      return css`
-        width: 100%;
-        border-top-left-radius: 11px;
-        border-top-right-radius: 11px;
-        padding-top: 35px;
-      `;
-    }
-  }};
-`);
+    ${({design}: IModalAnimatedProp) => {
+      if (design == 'minimal') {
+        return css`
+          width: 87%;
+          border-radius: 20px;
+        `;
+      }
+      if (design == 'default') {
+        return css`
+          width: 100%;
+          border-top-left-radius: 11px;
+          border-top-right-radius: 11px;
+          padding-top: 35px;
+        `;
+      }
+    }};
+  `);
 
 export const Scroll = styled.ScrollView`
-  max-height: 60%;
+  max-height: 73%;
 `;
 
 export const Title = styled.Text`
-  color: ${ colors.primary };
-  font-size: ${ colors.font_size_large };
+  color: ${(props: any) => props.theme.colors.primary};
+  font-size: ${(props: any) => props.theme.fonts.size.large};
   font-weight: bold;
 `;
 
 export const Subtitle = styled.Text`
-  color: ${ colors.primary_dark };
-  font-size: ${ colors.font_size_normal };
+  color: ${(props: any) => props.theme.colors.primary_dark};
+  font-size: ${(props: any) => props.theme.fonts.size.normal};
   margin-top: 10px;
+  text-align: justify;
 `;
 
 export const ContainerButton = styled.View`
@@ -87,51 +93,59 @@ export const ContainerButton = styled.View`
   padding-top: 10px;
   margin-top: 35px;
   border-top-width: 0.5px;
-  border-top-color: ${ colors.primary };
+  border-top-color: ${(props: any) => props.theme.colors.primary};
 `;
 
-export const ButtonOption = styled.TouchableOpacity`
+export const ButtonOption = styled.TouchableOpacity<IBaseProps>`
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 3px;
   margin-bottom: 5px;
   margin-top: 5px;
-  background-color: ${ colors.primary };
+  background-color: ${(props: any) => props.theme.colors.primary};
 
-  ${({ design, isCancel }: IModalAnimatedProp) => {
-    var cssResult = css``;
-    if(design == 'minimal'){
-      cssResult += css`
+  ${({design, isCancel}: IModalAnimatedProp) => {
+    // Existe a redundância pois o css não suporta a concatenação += junto com as props do ThemeProvider
+    if (design == 'minimal') {
+      if (isCancel) {
+        return css`
+          background-color: transparent;
+          border-width: 2px;
+          border-color: ${(props: any) => props.theme.colors.primary};
+          border-radius: 50px;
+        `;
+      }
+      return css`
         border-radius: 50px;
       `;
     }
-    if(design == 'default'){
-      cssResult += css`
+
+    if (design == 'default') {
+      if (isCancel) {
+        return css`
+          background-color: transparent;
+          border-width: 2px;
+          border-color: ${(props: any) => props.theme.colors.primary};
+          border-radius: 11px;
+        `;
+      }
+      return css`
         border-radius: 11px;
       `;
     }
-    if(isCancel){
-      cssResult += css`
-        background-color: transparent;
-        border-width: 2px;
-        border-color: #CC7178;
-        //border-color: ${ colors.primary };
-      `;
-    }
-    return cssResult;
   }};
 `;
 
 export const ButtonOptionLabel = styled.Text`
-  font-size: ${ colors.font_size_normal };
-  color: ${ colors.lighter };
+  font-size: ${(props: any) => props.theme.fonts.size.normal};
+  color: ${(props: any) => props.theme.colors.lighter};
   margin: 5px;
 
-  ${({ isCancel }) => {
-    if(isCancel){
+  ${({isCancel}: IBaseProps) => {
+    if (isCancel) {
       return css`
-        color: ${ colors.primary };
+        color: ${(props: any) => props.theme.colors.primary};
       `;
     }
   }};
@@ -152,13 +166,12 @@ export const ContentModalHeader = styled.View`
   border-top-right-radius: 11px;
   position: absolute;
   top: 0;
-  background-color: ${ colors.transparent };
+  background-color: ${(props: any) => props.theme.colors.transparent};
 `;
 
 export const Handle = styled.View`
   width: 13%;
   height: 4px;
   border-radius: 50px;
-
-  background-color: ${ colors.light };
+  background-color: ${(props: any) => props.theme.colors.light};
 `;
