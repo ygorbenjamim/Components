@@ -26,6 +26,7 @@ import {
 	ButtonResetValue,
 	TextError,
 } from './styles';
+import NotFound from '../NotFound';
 
 interface ISelectInputProps {
 	onPress?: () => void;
@@ -186,6 +187,9 @@ const SelectInput = ({
 									value={item}
 								/>
 							)}
+							ListEmptyComponent={
+								<NotFound description="Nenhuma opção encontrada." />
+							}
 							keyExtractor={() => String(Math.random())}
 							showsVerticalScrollIndicator={false}
 						/>

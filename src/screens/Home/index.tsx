@@ -18,6 +18,7 @@ import Dialog from '../../components/Dialog';
 
 // Hooks
 import { useDialog, useToast } from '../../hooks';
+import NotFound from '../../components/NotFound';
 
 /* behavior={Platform.OS === 'ios' ? 'padding' : undefined} */
 
@@ -296,6 +297,10 @@ const Home = () => {
 				<Button design={design} onPress={handleToast4}>
 					Erro
 				</Button>
+
+				<Title>Dados não encontrados</Title>
+
+				<NotFound description="Nenhum x encontrado." />
 			</Scroll>
 		</ContainerHome>
 	);
