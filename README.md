@@ -24,6 +24,10 @@ yarn add react-native-text-input-mask
 yarn add react-native-animatable
 ```
 
+```
+yarn add @react-native-community/datetimepicker
+```
+
 ## Dependências de desenvolvedor
 
 ```
