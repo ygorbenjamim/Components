@@ -226,7 +226,7 @@ export default App;
 
 |     Prop      |           Tipo           |                             Descrição                             | Requerido |
 | :-----------: | :----------------------: | :---------------------------------------------------------------: | :-------: |
-|    onPress    |         `string`         |         Função que será executada ao selecionar uma opção         |    Não    |
+|    onPress    |       `() => void`       |         Função que será executada ao selecionar uma opção         |    Não    |
 |     data      |       `IPicker[]`        |                          Lista de opções                          |    Não    |
 |     label     |         `string`         |                   Etiqueta da entrada de texto                    |    Não    |
 | requiredLabel |        `boolean`         |              Indicação visual para campo obrigatório              |    Não    |
