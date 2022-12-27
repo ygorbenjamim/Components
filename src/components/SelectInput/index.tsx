@@ -27,6 +27,7 @@ import {
 	TextError,
 } from './styles';
 import NotFound from '../NotFound';
+import { ActivityIndicator } from 'react-native';
 
 interface ISelectInputProps {
 	onPress?: () => void;
@@ -34,6 +35,7 @@ interface ISelectInputProps {
 	label?: string;
 	requiredLabel?: boolean;
 	design: 'default' | 'minimal';
+	loading?: boolean;
 	type: 'text' | 'date' | 'time' | any;
 	error?: string;
 	name: string;
@@ -46,6 +48,7 @@ const SelectInput = ({
 	label,
 	requiredLabel,
 	design,
+	loading,
 	type,
 	error,
 	name,
@@ -150,18 +153,22 @@ const SelectInput = ({
 							/>
 						</ButtonResetValue>
 					)}
-					<ButtonShow onPress={handleVisibleType}>
-						<MCIcon
-							name={
-								type == 'text'
-									? 'arrow-down-drop-circle-outline'
-									: type == 'date'
-									? 'calendar'
-									: 'clock'
-							}
-							size={24}
-							color={colors.primary}
-						/>
+					<ButtonShow disabled={loading} onPress={handleVisibleType}>
+						{loading ? (
+							<ActivityIndicator size="small" />
+						) : (
+							<MCIcon
+								name={
+									type == 'text'
+										? 'arrow-down-drop-circle-outline'
+										: type == 'date'
+										? 'calendar'
+										: 'clock'
+								}
+								size={24}
+								color={colors.primary}
+							/>
+						)}
 					</ButtonShow>
 				</ContentRow>
 			</ContentSelectInput>

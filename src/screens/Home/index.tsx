@@ -223,7 +223,9 @@ const Home = () => {
 					design={design}
 					data={options}
 					type="text"
+					label="Loading"
 					name="name7"
+					loading
 					control={control}
 					onPress={() => {}}
 					error="Mensagem de erro"
