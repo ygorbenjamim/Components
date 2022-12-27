@@ -1,9 +1,6 @@
 import styled, { css } from 'styled-components/native';
 import TextInputMaskRN from 'react-native-text-input-mask';
-
-interface IContentProps {
-	design?: string;
-}
+import { IDesignProps } from '../../interfaces/IDesignProps';
 
 export const ContainerInput = styled.View`
 	width: 100%;
@@ -12,10 +9,10 @@ export const ContainerInput = styled.View`
 	align-items: center;
 `;
 
-export const Content = styled.View<IContentProps>`
+export const Content = styled.View<IDesignProps>`
 	width: 88%;
 
-	${({ design }: IContentProps) => {
+	${({ design }: IDesignProps) => {
 		if (design == 'minimal') {
 			return css`
 				border-bottom-width: 1px;

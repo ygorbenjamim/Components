@@ -25,7 +25,7 @@ interface IInputProps extends TextInputProps {
 	maskFormat?: string;
 	name: string;
 	error?: string;
-	control?: Control<FieldValue<FieldValues>>;
+	control: Control<FieldValue<FieldValues>>;
 	password?: boolean;
 	design: 'default' | 'minimal';
 }

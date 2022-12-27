@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from 'styled-components';
+import { IToastItemProps } from '../../interfaces/IToastItemProps';
 import {
 	ContainerToast,
 	Content,
@@ -9,13 +10,6 @@ import {
 	SubTitle,
 	ButtonClose,
 } from './styles';
-
-export interface IToastItemProps {
-	id: number;
-	title?: string;
-	subtitle: string;
-	type?: 'success' | 'info' | 'danger' | 'warning';
-}
 
 interface IToastProps {
 	toastList: IToastItemProps[];

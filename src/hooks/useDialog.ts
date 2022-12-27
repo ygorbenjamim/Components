@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { IOptionsProp, IDialogItemProps } from '..';
+import { IDialogItemProps } from '../interfaces/IDialogItemProps';
+import { IOptionsDialogProp } from '../interfaces/IOptionsDialogProps';
 
 interface IuseDialogReturn {
 	dialogList: IDialogItemProps[];
@@ -7,7 +8,7 @@ interface IuseDialogReturn {
 	dialog: (
 		title: string,
 		subtitle: string,
-		options?: IOptionsProp[],
+		options?: IOptionsDialogProp[],
 		design?: 'default' | 'minimal',
 		loading?: boolean,
 	) => void;
@@ -19,7 +20,7 @@ function useDialog(): IuseDialogReturn {
 	const dialog = (
 		title: string,
 		subtitle: string,
-		options?: IOptionsProp[],
+		options?: IOptionsDialogProp[],
 		design?: 'default' | 'minimal',
 		loading?: boolean,
 	) => {

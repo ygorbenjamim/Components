@@ -3,6 +3,7 @@ import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme } from 'styled-components';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Item from './components/Item';
+import { IPicker } from '../../interfaces/IPicker';
 import {
 	Control,
 	FieldValue,
@@ -25,16 +26,6 @@ import {
 	ButtonResetValue,
 	TextError,
 } from './styles';
-
-interface IPicker {
-	key: string | number;
-	label: string;
-}
-
-interface IFlatListProps {
-	item: IPicker;
-	index: number;
-}
 
 interface ISelectInputProps {
 	onPress?: () => void;
@@ -189,7 +180,7 @@ const SelectInput = ({
 						/>
 						<FlatList
 							data={search.length > 0 ? filterData : data}
-							renderItem={({ item, index }: IFlatListProps) => (
+							renderItem={({ item }: any) => (
 								<Item
 									onPress={() => handlePressText(item)}
 									value={item}

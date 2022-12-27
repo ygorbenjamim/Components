@@ -1,16 +1,8 @@
 import styled, { css } from 'styled-components/native';
 import * as Animatable from 'react-native-animatable';
-
-interface IBaseProps {
-	isCancel?: boolean;
-	design?: 'default' | 'minimal';
-}
-
-interface IModalAnimatedProp extends Animatable.AnimatableProperties<any> {
-	style?: any;
-	isCancel?: boolean;
-	design?: 'default' | 'minimal';
-}
+import { IDesignProps } from '../../interfaces/IDesignProps';
+import { ITypeControlProps } from '../../interfaces/ITypeControlProps';
+import { IContentButtonProps } from '../../interfaces/IContentButtonProps';
 
 export const ContainerDialog = styled.View`
 	flex: 1;
@@ -21,7 +13,7 @@ export const ContainerDialog = styled.View`
 
 export const Modal = styled.Modal``;
 
-export const ContainerClose = styled.TouchableHighlight<IBaseProps>`
+export const ContainerClose = styled.TouchableHighlight<IDesignProps>`
 	flex: 1;
 	width: 100%;
 	height: 100%;
@@ -29,7 +21,7 @@ export const ContainerClose = styled.TouchableHighlight<IBaseProps>`
 	align-items: center;
 	background-color: ${(props: any) => props.theme.colors.darkTransparent};
 
-	${({ design }: IModalAnimatedProp) => {
+	${({ design }: IDesignProps) => {
 		if (design == 'minimal') {
 			return css`
 				justify-content: center;
@@ -44,13 +36,13 @@ export const ContainerClose = styled.TouchableHighlight<IBaseProps>`
 `;
 
 export const Content =
-	Animatable.createAnimatableComponent<any>(styled.View<IModalAnimatedProp>`
+	Animatable.createAnimatableComponent<any>(styled.View<IDesignProps>`
 		background-color: ${(props: any) => props.theme.colors.background};
 		padding: 15px;
 		max-height: 70%;
 		justify-content: space-between;
 
-		${({ design }: IModalAnimatedProp) => {
+		${({ design }: IDesignProps) => {
 			if (design == 'minimal') {
 				return css`
 					width: 87%;
@@ -96,7 +88,7 @@ export const ContainerButton = styled.View`
 	border-top-color: ${(props: any) => props.theme.colors.primary};
 `;
 
-export const ButtonOption = styled.TouchableOpacity<IBaseProps>`
+export const ButtonOption = styled.TouchableOpacity<IContentButtonProps>`
 	justify-content: center;
 	align-items: center;
 	width: 100%;
@@ -105,7 +97,7 @@ export const ButtonOption = styled.TouchableOpacity<IBaseProps>`
 	margin-top: 5px;
 	background-color: ${(props: any) => props.theme.colors.primary};
 
-	${({ design, isCancel }: IModalAnimatedProp) => {
+	${({ isCancel, design }: IContentButtonProps) => {
 		// Existe a redundância pois o css não suporta a concatenação += junto com as props do ThemeProvider
 		if (design == 'minimal') {
 			if (isCancel) {
@@ -137,12 +129,12 @@ export const ButtonOption = styled.TouchableOpacity<IBaseProps>`
 	}};
 `;
 
-export const ButtonOptionLabel = styled.Text`
+export const ButtonOptionLabel = styled.Text<ITypeControlProps>`
 	font-size: ${(props: any) => props.theme.fonts.size.normal};
 	color: ${(props: any) => props.theme.colors.lighter};
 	margin: 5px;
 
-	${({ isCancel }: IBaseProps) => {
+	${({ isCancel }: ITypeControlProps) => {
 		if (isCancel) {
 			return css`
 				color: ${(props: any) => props.theme.colors.primary};

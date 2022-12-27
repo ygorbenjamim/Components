@@ -17,8 +17,7 @@ import Toast from '../../components/Toast';
 import Dialog from '../../components/Dialog';
 
 // Hooks
-import useToast from '../../components/Toast/hooks';
-import useDialog from '../../components/Dialog/hooks';
+import { useDialog, useToast } from '../../hooks';
 
 /* behavior={Platform.OS === 'ios' ? 'padding' : undefined} */
 
@@ -161,6 +160,7 @@ const Home = () => {
 					name="name0"
 					label="Etiqueta"
 					placeholder="Exemplo"
+					control={control}
 				/>
 
 				<Input
@@ -170,6 +170,7 @@ const Home = () => {
 					requiredLabel
 					placeholder="000.000.000-00"
 					maskFormat="[000].[000].[000]-[00]"
+					control={control}
 				/>
 
 				<Input
@@ -177,6 +178,7 @@ const Home = () => {
 					name="name2"
 					placeholder="Senha"
 					password
+					control={control}
 				/>
 
 				<Input
@@ -184,6 +186,7 @@ const Home = () => {
 					name="name3"
 					placeholder="Mensagem de erro"
 					error="Mensagem de erro"
+					control={control}
 				/>
 
 				<Title>Entrada de opções</Title>

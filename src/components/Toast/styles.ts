@@ -1,9 +1,6 @@
 import styled, { css } from 'styled-components/native';
 import * as Animatable from 'react-native-animatable';
-
-interface ITextProps {
-	type?: string;
-}
+import { ITypeOfToast } from '../../interfaces/ITypeOfToast';
 
 export const ContainerToast = styled.View`
 	position: absolute;
@@ -35,12 +32,12 @@ export const ContentColumn = styled.View`
 	padding: 0 10px;
 `;
 
-export const Title = styled.Text`
+export const Title = styled.Text<ITypeOfToast>`
 	font-size: ${(props: any) => props.theme.fonts.size.small};
 	font-weight: bold;
 	color: ${(props: any) => props.theme.colors.success};
 
-	${({ type }: ITextProps) => {
+	${({ type }: ITypeOfToast) => {
 		if (type == 'success') {
 			return css`
 				color: ${(props: any) => props.theme.colors.success};

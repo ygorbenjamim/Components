@@ -1,10 +1,6 @@
 import React from 'react';
+import { IPicker } from '../../../../interfaces/IPicker';
 import { Container, Text } from './styles';
-
-interface IPicker {
-	key: string | number;
-	label: string;
-}
 
 interface IItemProps {
 	value: IPicker;

@@ -34,15 +34,14 @@ const Button = ({
 				disabled={disabled || loading}
 				outline={outline}
 				transparent={transparent}
-				design={design}
-				enabled={!disabled}>
+				design={design}>
 				{loading ? (
 					<ActivityIndicator size="small" color="white" />
 				) : (
 					<Label
 						outline={outline}
 						transparent={transparent}
-						enabled={!disabled}>
+						disabled={disabled}>
 						{children}
 					</Label>
 				)}

@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react';
 import { ActivityIndicator } from 'react-native';
 import { useTheme } from 'styled-components';
+import { IDialogItemProps } from '../../interfaces/IDialogItemProps';
+import { IOptionsDialogProp } from '../../interfaces/IOptionsDialogProps';
 import {
 	ContainerDialog,
 	Modal,
@@ -17,20 +19,6 @@ import {
 	Handle,
 } from './styles';
 
-export interface IOptionsProp {
-	text: string;
-	onPress: () => void;
-}
-
-export interface IDialogItemProps {
-	id: number;
-	design: 'default' | 'minimal';
-	title?: string;
-	subtitle?: string;
-	options?: IOptionsProp[];
-	loading?: boolean;
-}
-
 interface IDialogProps {
 	dialogList: IDialogItemProps[];
 	setDialogList: (dialogList: IDialogItemProps[]) => void;
@@ -39,7 +27,7 @@ interface IDialogProps {
 const Dialog = ({ dialogList, setDialogList }: IDialogProps): JSX.Element => {
 	const { colors } = useTheme();
 
-	const handlePressOption = (item: IOptionsProp, id: number) => {
+	const handlePressOption = (item: IOptionsDialogProp, id: number) => {
 		item.onPress();
 		handleRemove(id);
 	};

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { IToastItemProps } from '..';
+import { IToastItemProps } from '../interfaces/IToastItemProps';
 
 interface IuseToastReturn {
 	toastList: IToastItemProps[];
