@@ -3,26 +3,33 @@
 ```
 yarn add styled-components
 ```
+
 ```
 yarn add react-hook-form
 ```
+
 ```
 yarn add react-native-vector-icons
 ```
+
 ```
 yarn add moment
 ```
+
 ```
 yarn add react-native-text-input-mask
 ```
+
 ```
 yarn add react-native-animatable
 ```
 
 ## Dependências de desenvolvedor
+
 ```
 yarn add --dev @types/react-native-vector-icons
 ```
+
 ```
 yarn add --dev @types/styled-components
 ```
@@ -32,25 +39,28 @@ yarn add --dev @types/styled-components
 ### react-native-vector-icons
 
 Criar arquivos react-native.config.js na raiz do projeto e colar o código
+
 ```js
 module.exports = {
-    dependencies: {
-        'react-native-vector-icons': {
-            platforms: {
-                ios: null,
-            },
-        },
-    },
-    project: {
-        ios: {},
-        android: {},
-    },
-    assets: ['./src/assets/fonts'],
+	dependencies: {
+		'react-native-vector-icons': {
+			platforms: {
+				ios: null,
+			},
+		},
+	},
+	project: {
+		ios: {},
+		android: {},
+	},
+	assets: ['./src/assets/fonts'],
 };
 ```
 
 #### Android
+
 Inserir em `android/build.gradle` o código
+
 ```js
 dependencies {
     //...
@@ -61,37 +71,42 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle" // <- Ad
 ```
 
 #### IOS
+
 Inserir em `podfile` o código abaixo
+
 ```
 pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 ```
 
 Inserir em `info.plist` o código abaixo
+
 ```html
 <key>UIAppFonts</key>
 <array>
-    <string>AntDesign.ttf</string>
-    <string>Entypo.ttf</string>
-    <string>EvilIcons.ttf</string>
-    <string>Feather.ttf</string>
-    <string>FontAwesome.ttf</string>
-    <string>FontAwesome5_Brands.ttf</string>
-    <string>FontAwesome5_Regular.ttf</string>
-    <string>FontAwesome5_Solid.ttf</string>
-    <string>Foundation.ttf</string>
-    <string>Ionicons.ttf</string>
-    <string>MaterialIcons.ttf</string>
-    <string>MaterialCommunityIcons.ttf</string>
-    <string>SimpleLineIcons.ttf</string>
-    <string>Octicons.ttf</string>
-    <string>Zocial.ttf</string>
+	<string>AntDesign.ttf</string>
+	<string>Entypo.ttf</string>
+	<string>EvilIcons.ttf</string>
+	<string>Feather.ttf</string>
+	<string>FontAwesome.ttf</string>
+	<string>FontAwesome5_Brands.ttf</string>
+	<string>FontAwesome5_Regular.ttf</string>
+	<string>FontAwesome5_Solid.ttf</string>
+	<string>Foundation.ttf</string>
+	<string>Ionicons.ttf</string>
+	<string>MaterialIcons.ttf</string>
+	<string>MaterialCommunityIcons.ttf</string>
+	<string>SimpleLineIcons.ttf</string>
+	<string>Octicons.ttf</string>
+	<string>Zocial.ttf</string>
 </array>
 ```
 
 ### react-native-text-input-mask
 
 #### Android
+
 Inserir em `android/build.gradle`o código
+
 ```js
 buildscript {
     ext {
@@ -108,7 +123,9 @@ buildscript {
 ```
 
 #### IOS
+
 Inserir em `podfile` o código
+
 ```js
 pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :modular_headers => true
 ```
@@ -118,14 +135,15 @@ pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :mo
 ## Button
 
 ### Propriedades
-| Prop | Tipo | Descrição | Requerido |
-| :--: | :--: | :--: | :--: |
-| onPress | `() => void` | Função que será executada ao clicar | Sim |
-| disabled | `boolean` | Indica se o botão poderá ser clicado | Não |
-| loading | `boolean` | Indica se o botão está em estado de loading | Não |
-| outline | `boolean` | Indica se o estilo `outline` | Não |
-| transparent | `boolean` | Indica se o background é `transparent` | Não |
-| design | `string` | Indica o design `'default'` ou `'minimal'` | Não |
+
+|    Prop     |           Tipo           |                  Descrição                  | Requerido |
+| :---------: | :----------------------: | :-----------------------------------------: | :-------: |
+|   onPress   |       `() => void`       |     Função que será executada ao clicar     |    Sim    |
+|  disabled   |        `boolean`         |    Indica se o botão poderá ser clicado     |    Não    |
+|   loading   |        `boolean`         | Indica se o botão está em estado de loading |    Não    |
+|   outline   |        `boolean`         |        Indica se o estilo `outline`         |    Não    |
+| transparent |        `boolean`         |   Indica se o background é `transparent`    |    Não    |
+|   design    | `'default' or 'minimal'` |               Indica o design               |    Sim    |
 
 ### Exemplo
 
@@ -136,38 +154,39 @@ import React from 'react';
 import Button from '../components/Button';
 
 function App() {
-    return(
-        <Button
-            design='default'
-            onPress={() => Alert.alert('Alert', 'Alert')}
-        >
-            Exemplo
-        </Button>
-    );
+	return (
+		<Button design="default" onPress={() => Alert.alert('Alert', 'Alert')}>
+			Exemplo
+		</Button>
+	);
 }
 export default App;
 ```
 
 #### Imagem de algumas variações
+
 ##### Design default
+
 <img src="img/buttonsDefault.png" width="350px">
 
 ##### Design Minimal
+
 <img src="img/buttonsMinimal.png" width="350px">
 
 ## Input
 
 ### Propriedades
-| Prop | Tipo | Descrição | Requerido |
-| :--: | :--: | :--: | :--: |
-| label | `string` | Etiqueta da entrada de texto | Não |
-| requiredLabel | `boolean` | Indicação visual para campo obrigatório | Não |
-| maskFormat | `string` | Máscara para o texto, utilizando valores dentro dos colchetes. Exemplo de valores: `'[0000]-[00]' ou '[aa]/[aa]'` | Não |
-| name | `string` | Referente a integração com `react-hook-form` | Sim |
-| error | `string` | Mensagem de erro abaixo da entrada de texto | Não |
-| control | `control` | Referente a integração com `react-hook-form` | Não |
-| password | `boolean` | Indica se a entrada de texto receberá um valor de senha | Não |
-| design | `string` | Indica o design `'default'` ou `'minimal'` | Não |
+
+|     Prop      |           Tipo           |                           Descrição                           | Requerido |
+| :-----------: | :----------------------: | :-----------------------------------------------------------: | :-------: |
+|     label     |         `string`         |                 Etiqueta da entrada de texto                  |    Não    |
+| requiredLabel |        `boolean`         |            Indicação visual para campo obrigatório            |    Não    |
+|  maskFormat   |         `string`         | Máscara para o texto, utilizando valores dentro dos colchetes |    Não    |
+|     name      |         `string`         |         Referente a integração com `react-hook-form`          |    Sim    |
+|     error     |         `string`         |          Mensagem de erro abaixo da entrada de texto          |    Não    |
+|    control    |        `control`         |         Referente a integração com `react-hook-form`          |    Sim    |
+|   password    |        `boolean`         |    Indica se a entrada de texto receberá um valor de senha    |    Não    |
+|    design     | `'default' or 'minimal'` |                        Indica o design                        |    Sim    |
 
 ### Exemplo
 
@@ -178,47 +197,52 @@ import React from 'react';
 import Input from '../components/Input';
 
 function App() {
-    return(
-        <Input
-            label='Etiqueta'
-            name='name'
-            control={ control }
-            placeholder='Exemplo' // <- Prop herdada do TextInput
-            design='default'
-        />
-    );
+	return (
+		<Input
+			label="Etiqueta"
+			name="name"
+			control={control}
+			placeholder="Exemplo" // <- Prop herdada do TextInput
+			design="default"
+		/>
+	);
 }
 export default App;
 ```
 
 #### Imagem de algumas variações
+
 ##### Design default
+
 <img src="img/inputsDefault.png" width="350px">
 
 ##### Design Minimal
+
 <img src="img/inputsMinimal.png" width="350px">
 
 ## SelectInput
 
 ### Propriedades
-| Prop | Tipo | Descrição | Requerido |
-| :--: | :--: | :--: | :--: |
-| onPress | `string` | Função que será executada ao selecionar uma opção | Não |
-| data | `IPicker[]` | Lista de opções | Não |
-| label | `string` | Etiqueta da entrada de texto | Não |
-| requiredLabel | `boolean` | Indicação visual para campo obrigatório | Não |
-| design | `string` | Indica o design `'default'` ou `'minimal'` | Não |
-| type | `string` | Indica o tipo de opções, podendo ser `'text' ou 'date' ou 'time'` | Não |
-| error | `string` | Mensagem de erro abaixo da entrada de texto | Não |
-| name | `string` | Referente a integração com `react-hook-form` | Sim |
-| control | `control` | Referente a integração com `react-hook-form` | Não |
+
+|     Prop      |           Tipo           |                             Descrição                             | Requerido |
+| :-----------: | :----------------------: | :---------------------------------------------------------------: | :-------: |
+|    onPress    |         `string`         |         Função que será executada ao selecionar uma opção         |    Não    |
+|     data      |       `IPicker[]`        |                          Lista de opções                          |    Não    |
+|     label     |         `string`         |                   Etiqueta da entrada de texto                    |    Não    |
+| requiredLabel |        `boolean`         |              Indicação visual para campo obrigatório              |    Não    |
+|    design     | `'default' or 'minimal'` |                          Indica o design                          |    Sim    |
+|    loading    |        `boolean`         |                    Indica o estado de loading                     |    Não    |
+|     type      |         `string`         | Indica o tipo de opções, podendo ser `'text' ou 'date' ou 'time'` |    Não    |
+|     error     |         `string`         |            Mensagem de erro abaixo da entrada de texto            |    Não    |
+|     name      |         `string`         |           Referente a integração com `react-hook-form`            |    Sim    |
+|    control    |        `control`         |           Referente a integração com `react-hook-form`            |    Sim    |
 
 #### O tipo `IPiker` consiste na seguinte interface
 
 ```tsx
 interface IPicker {
-    key: string | number;
-    label: string;
+	key: string | number;
+	label: string;
 }
 ```
 
@@ -229,47 +253,51 @@ import React from 'react';
 import Input from '../components/SelectInput';
 
 function App() {
-    return(
-        <SelectInput
-            data={ options }
-            label='Etiqueta'
-            type='text'
-            design='default'
-            name='name4'
-            control={ control }
-        />
-    );
+	return (
+		<SelectInput
+			data={options}
+			label="Etiqueta"
+			type="text"
+			design="default"
+			name="name4"
+			control={control}
+		/>
+	);
 }
 export default App;
 ```
 
 #### Imagem de algumas variações
+
 ##### Design default
+
 <img src="img/selectInputsDefault.png" width="350px">
 <img src="img/dateTimeDefault.png" width="350px">
 
 ##### Design Minimal
+
 <img src="img/selectInputsMinimal.png" width="350px">
 <img src="img/dateTimeMinimal.png" width="350px">
 
 ## Dialog
 
 ### Propriedades
-| Prop | Tipo | Descrição | Requerido |
-| :--: | :--: | :--: | :--: |
-| dialogList | `IDialogItemProps[]` | Variável com uma lista de diálogos | Sim |
-| setDialogList | `(dialogList: IDialogItemProps[]) => void` | Função que altera o valor da lista de diálogos | Sim |
+
+|     Prop      |                    Tipo                    |                   Descrição                    | Requerido |
+| :-----------: | :----------------------------------------: | :--------------------------------------------: | :-------: |
+|  dialogList   |            `IDialogItemProps[]`            |       Variável com uma lista de diálogos       |    Sim    |
+| setDialogList | `(dialogList: IDialogItemProps[]) => void` | Função que altera o valor da lista de diálogos |    Sim    |
 
 #### O tipo `IDialogItemProps` consiste na seguinte interface
 
 ```tsx
 interface IDialogItemProps {
-    id: number;
-    design?: 'default' | 'minimal';
-    title?: string;
-    subtitle?: string;
-    options?: IOptionsProp[];
-    loading?: boolean;
+	id: number;
+	design?: 'default' | 'minimal';
+	title?: string;
+	subtitle?: string;
+	options?: IOptionsProp[];
+	loading?: boolean;
 }
 ```
 
@@ -284,50 +312,52 @@ import Dialog from '../components/Dialog';
 import useDialog from '../../components/Dialog/hooks';
 
 function App() {
-    const { dialog, dialogList, setDialogList } = useDialog();
+	const { dialog, dialogList, setDialogList } = useDialog();
 
-    // chamada da função. Exemplo 1
-    dialog('Título', 'Subtítulo');
+	// chamada da função. Exemplo 1
+	dialog('Título', 'Subtítulo');
 
-    // chamada da função. Exemplo 2
-    dialog('', 'Subtítulo', [
-        { text: 'Opção 1', onPress: () => Alert.alert('Chamada de função') },
-        { text: 'Opção 2', onPress: () => Alert.alert('Chamada de função') },
-        { text: 'Opção 3', onPress: () => Alert.alert('Chamada de função') },
-        { text: 'Opção 4', onPress: () => Alert.alert('Chamada de função') },
-        { text: 'Cancelar', onPress: () => {} }
-    ]);
+	// chamada da função. Exemplo 2
+	dialog('', 'Subtítulo', [
+		{ text: 'Opção 1', onPress: () => Alert.alert('Chamada de função') },
+		{ text: 'Opção 2', onPress: () => Alert.alert('Chamada de função') },
+		{ text: 'Opção 3', onPress: () => Alert.alert('Chamada de função') },
+		{ text: 'Opção 4', onPress: () => Alert.alert('Chamada de função') },
+		{ text: 'Cancelar', onPress: () => {} },
+	]);
 
-    return(
-        <Dialog dialogList={ dialogList } setDialogList={ setDialogList } />
-    );
+	return <Dialog dialogList={dialogList} setDialogList={setDialogList} />;
 }
 export default App;
 ```
 
 #### Imagem de algumas variações
+
 ##### Design default
+
 <img src="img/dialogDefault.png" width="350px">
 
 ##### Design Minimal
+
 <img src="img/dialogMinimal.png" width="350px">
 
 ## Toast
 
 ### Propriedades
-| Prop | Tipo | Descrição | Requerido |
-| :--: | :--: | :--: | :--: |
-| toastList | `IToastItemProps[]` | Variável com uma lista de toast | Sim |
-| setToastList | `(toastList: IToastItemProps[]) => void` | Função que altera o valor da lista de toast | Sim |
+
+|     Prop     |                   Tipo                   |                  Descrição                  | Requerido |
+| :----------: | :--------------------------------------: | :-----------------------------------------: | :-------: |
+|  toastList   |           `IToastItemProps[]`            |       Variável com uma lista de toast       |    Sim    |
+| setToastList | `(toastList: IToastItemProps[]) => void` | Função que altera o valor da lista de toast |    Sim    |
 
 #### O tipo `IToastItemProps` consiste na seguinte interface
 
 ```tsx
 interface IToastItemProps {
-    id: number;
-    title?: string;
-    subtitle: string;
-    type?: 'success' | 'info' | 'danger' | 'warning';
+	id: number;
+	title?: string;
+	subtitle: string;
+	type: 'success' | 'info' | 'danger' | 'warning';
 }
 ```
 
@@ -343,21 +373,43 @@ import Toast from '../components/Toast';
 import useToast from '../../components/Toast/hooks';
 
 function App() {
-    const { toast, toastList, setToastList } = useToast();
+	const { toast, toastList, setToastList } = useToast();
 
-    // chamada da função. Exemplo 1
-    toast('Sucesso', 'Mensagem de sucesso.', 'success');
+	// chamada da função. Exemplo 1
+	toast('Sucesso', 'Mensagem de sucesso.', 'success');
 
-    // chamada da função. Exemplo 2
-    toast('Informação', 'Mensagem de informação.', 'info');
+	// chamada da função. Exemplo 2
+	toast('Informação', 'Mensagem de informação.', 'info');
 
-    return(
-        <Toast toastList={ toastList } setToastList={ setToastList }/>
-    );
+	return <Toast toastList={toastList} setToastList={setToastList} />;
 }
 export default App;
 ```
 
 #### Imagem de algumas variações em cascata
+
 ##### Design default
+
 <img src="img/toast.png" width="350px">
+
+## NotFound
+
+### Propriedades
+
+|    Prop     |   Tipo   |              Descrição              | Requerido |
+| :---------: | :------: | :---------------------------------: | :-------: |
+| description | `string` | Descrição do que não foi encontrado |    Não    |
+
+### Exemplo
+
+O Componente exibe um feedback para o usuário informando que ao concluir uma busca, os dados não foram encontrados. Um bom exemplo de uso, é utilizá-lo como argumento para a prop `ListEmptyComponent` do `FlatList`.
+
+```tsx
+import React, { useState } from 'react';
+import NotFound from '../components/NotFound';
+
+function App() {
+	return <NotFound description="Nenhum registro encontrado." />;
+}
+export default App;
+```
