@@ -309,7 +309,7 @@ O componente precisa ser incluído na `DOM`dentro do `return`, após isso, o seu
 import React, { useState } from 'react';
 import Dialog from '../components/Dialog';
 // Hook
-import useDialog from '../../components/Dialog/hooks';
+import useDialog from '../hooks';
 
 function App() {
 	const { dialog, dialogList, setDialogList } = useDialog();
@@ -370,7 +370,7 @@ import React, { useState } from 'react';
 import Toast from '../components/Toast';
 
 // Hooks
-import useToast from '../../components/Toast/hooks';
+import useToast from '../hooks';
 
 function App() {
 	const { toast, toastList, setToastList } = useToast();
