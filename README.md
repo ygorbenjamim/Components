@@ -1,4 +1,4 @@
-# Dependências
+# Dependências instaladas
 
 ```
 yarn add styled-components
@@ -163,16 +163,6 @@ function App() {
 export default App;
 ```
 
-#### Imagem de algumas variações
-
-##### Design default
-
-<img src="img/buttonsDefault.png" width="350px">
-
-##### Design Minimal
-
-<img src="img/buttonsMinimal.png" width="350px">
-
 ## Input
 
 ### Propriedades
@@ -209,16 +199,6 @@ function App() {
 }
 export default App;
 ```
-
-#### Imagem de algumas variações
-
-##### Design default
-
-<img src="img/inputsDefault.png" width="350px">
-
-##### Design Minimal
-
-<img src="img/inputsMinimal.png" width="350px">
 
 ## SelectInput
 
@@ -266,18 +246,6 @@ function App() {
 }
 export default App;
 ```
-
-#### Imagem de algumas variações
-
-##### Design default
-
-<img src="img/selectInputsDefault.png" width="350px">
-<img src="img/dateTimeDefault.png" width="350px">
-
-##### Design Minimal
-
-<img src="img/selectInputsMinimal.png" width="350px">
-<img src="img/dateTimeMinimal.png" width="350px">
 
 ## Dialog
 
@@ -331,16 +299,6 @@ function App() {
 export default App;
 ```
 
-#### Imagem de algumas variações
-
-##### Design default
-
-<img src="img/dialogDefault.png" width="350px">
-
-##### Design Minimal
-
-<img src="img/dialogMinimal.png" width="350px">
-
 ## Toast
 
 ### Propriedades
@@ -385,12 +343,6 @@ function App() {
 }
 export default App;
 ```
-
-#### Imagem de algumas variações em cascata
-
-##### Design default
-
-<img src="img/toast.png" width="350px">
 
 ## NotFound
 
