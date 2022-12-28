@@ -1,8 +1,8 @@
 # Design de alguns componentes
 
 <div>
-	<img src="/img/default.jpeg" alt="Design default" width="300"/>
-	<img src="/img/minimal.jpeg" alt="Design minimal" width="300"/>
+	<img src="/src/assets/default.jpeg" alt="Design default" width="300"/>
+	<img src="/src/assets/minimal.jpeg" alt="Design minimal" width="300"/>
 </div>
 
 ## Dependências instaladas
@@ -70,7 +70,7 @@ module.exports = {
 
 #### Android
 
-Inserir em `android/build.gradle` o código
+Inserir em `android/app/build.gradle` o código
 
 ```js
 dependencies {
@@ -127,7 +127,7 @@ buildscript {
 
     dependencies {
         // ...
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" // <- Adicionar essa linha
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version") // <- Adicionar essa linha
         // ...
     }
 }

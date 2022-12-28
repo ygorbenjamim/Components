@@ -135,7 +135,7 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.componentsbyygor"
+        applicationId "com.components"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -281,6 +281,8 @@ dependencies {
     implementation(project(':react-native-vector-icons'))
 }
 
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 if (isNewArchitectureEnabled()) {
     // If new architecture is enabled, we let you build RN from source
     // Otherwise we fallback to a prebuilt .aar bundled in the NPM package.
@@ -313,5 +315,3 @@ def isNewArchitectureEnabled() {
     // - Set an environment variable `ORG_GRADLE_PROJECT_newArchEnabled=true`
     return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
 }
-
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
