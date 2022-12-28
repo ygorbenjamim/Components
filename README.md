@@ -1,9 +1,11 @@
-<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+<p style="text-align: center;">Design de alguns componentes</p>
+
+<div>
 	<img src="/img/default.jpeg" alt="Design default" width="300"/>
 	<img src="/img/minimal.jpeg" alt="Design minimal" width="300"/>
 </div>
 
-# Dependências instaladas
+## Dependências instaladas
 
 ```
 yarn add styled-components
