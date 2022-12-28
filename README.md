@@ -1,6 +1,6 @@
-<div style="display: flex; justify-content: center; align-items: center;">
-	<img src="/img/default.jpeg" alt="Design default" width="200"/>
-	<img src="/img/default.jpeg" alt="Design default" width="200"/>
+<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+	<img src="/img/default.jpeg" alt="Design default" width="300"/>
+	<img src="/img/minimal.jpeg" alt="Design minimal" width="300"/>
 </div>
 
 # Dependências instaladas
