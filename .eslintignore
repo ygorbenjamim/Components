@@ -1,8 +1,0 @@
-**/*.js
-/*.js
-node_modules
-build
-android
-ios
-/src/*
-*.tsx
