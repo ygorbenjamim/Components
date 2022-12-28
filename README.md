@@ -1,4 +1,5 @@
 ![Alt text](/img/default.jpeg?raw=true 'Design default')
+<img src="/img/default.jpeg" alt="Design default" width="50"/>
 
 # Dependências instaladas
 
