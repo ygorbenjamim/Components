@@ -1,4 +1,4 @@
-<p>Design de alguns componentes</p>
+# Design de alguns componentes
 
 <div>
 	<img src="/img/default.jpeg" alt="Design default" width="300"/>
