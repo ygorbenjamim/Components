@@ -1524,24 +1524,6 @@
   resolved "https://registry.npmjs.org/@types/stack-utils/-/stack-utils-2.0.1.tgz"
   integrity sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==
 
-"@types/styled-components-react-native@^5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@types/styled-components-react-native/-/styled-components-react-native-5.2.0.tgz#0299813cafd059c81dd4e056f5e098419d5404f0"
-  integrity sha512-J5w74FBkXjHO9+9gYX2CgwEWFDE1LxrBUhmkoc0y1tLZ8RoQ0AZEgljXvqY2dl5rRkTgh941VpmPKnntIyVNtg==
-  dependencies:
-    "@types/react" "*"
-    "@types/react-native" "*"
-    "@types/styled-components" "*"
-
-"@types/styled-components@*":
-  version "5.1.26"
-  resolved "https://registry.npmjs.org/@types/styled-components/-/styled-components-5.1.26.tgz"
-  integrity sha512-KuKJ9Z6xb93uJiIyxo/+ksS7yLjS1KzG6iv5i78dhVg/X3u5t1H7juRWqVmodIdz6wGVaIApo1u01kmFRdJHVw==
-  dependencies:
-    "@types/hoist-non-react-statics" "*"
-    "@types/react" "*"
-    csstype "^3.0.2"
-
 "@types/styled-components@5.1.6":
   version "5.1.6"
   resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.6.tgz#b47460f1684072576999955b5b5153e6f238622c"

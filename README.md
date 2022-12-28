@@ -42,7 +42,7 @@ yarn add --dev @types/react-native-vector-icons
 ```
 
 ```
-yarn add --dev @types/styled-components
+yarn add --dev @types/styled-components@5.1.6
 ```
 
 # Instruções de instalação das bibliotecas mencionadas
