@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { ActivityIndicator } from 'react-native';
+import { useTheme } from 'styled-components';
 import {
 	ContainerButton,
 	ContentButton,
@@ -27,6 +28,8 @@ const Button = ({
 	transparent,
 	design,
 }: IButtonProps): JSX.Element => {
+	const { colors } = useTheme();
+
 	return (
 		<ContainerButton>
 			<ContentButton
@@ -36,7 +39,7 @@ const Button = ({
 				transparent={transparent}
 				design={design}>
 				{loading ? (
-					<ActivityIndicator size="small" color="white" />
+					<ActivityIndicator size="small" color={colors.primary} />
 				) : (
 					<Label
 						outline={outline}

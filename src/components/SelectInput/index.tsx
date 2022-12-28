@@ -155,7 +155,10 @@ const SelectInput = ({
 					)}
 					<ButtonShow disabled={loading} onPress={handleVisibleType}>
 						{loading ? (
-							<ActivityIndicator size="small" />
+							<ActivityIndicator
+								size="small"
+								color={colors.primary}
+							/>
 						) : (
 							<MCIcon
 								name={
