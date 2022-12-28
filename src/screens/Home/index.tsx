@@ -118,6 +118,50 @@ const Home = () => {
 			</ButtonDesign>
 
 			<Scroll>
+				<Input
+					design={design}
+					name="name3"
+					label="Etiqueta"
+					placeholder="Mensagem de erro"
+					error="Mensagem de erro"
+					control={control}
+				/>
+				<SelectInput
+					design={design}
+					data={options}
+					type="text"
+					label="Selecionável"
+					name="name7"
+					control={control}
+					onPress={() => {}}
+					error="Mensagem de erro"
+				/>
+				<SelectInput
+					design={design}
+					data={options}
+					type="date"
+					label="Data"
+					name="name7"
+					control={control}
+					onPress={() => {}}
+					error="Mensagem de erro"
+				/>
+				<SelectInput
+					design={design}
+					data={options}
+					type="time"
+					label="Hora"
+					name="name7"
+					control={control}
+					onPress={() => {}}
+					error="Mensagem de erro"
+				/>
+				<Button
+					design={design}
+					onPress={() => Alert.alert('Chamada de função')}>
+					Padrão
+				</Button>
+
 				<Title>Botões</Title>
 
 				<Button

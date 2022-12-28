@@ -1,3 +1,5 @@
+![Alt text](/img/default.jpeg?raw=true 'Design default')
+
 # Dependências instaladas
 
 ```
