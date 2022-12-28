@@ -1,6 +1,4 @@
-<center>
-	Design de alguns componentes
-</center>
+<p>Design de alguns componentes</p>
 
 <div>
 	<img src="/img/default.jpeg" alt="Design default" width="300"/>
