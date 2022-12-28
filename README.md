@@ -1,9 +1,9 @@
-<p style="text-align: center;">Design de alguns componentes</p>
+<center>Design de alguns componentes</center>
 
-<div>
+<center>
 	<img src="/img/default.jpeg" alt="Design default" width="300"/>
 	<img src="/img/minimal.jpeg" alt="Design minimal" width="300"/>
-</div>
+</center>
 
 ## Dependências instaladas
 
