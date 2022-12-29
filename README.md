@@ -1,10 +1,3 @@
-# Design de alguns componentes
-
-<div>
-	<img src="/src/assets/printscreen/default.jpeg" alt="Design default" width="300"/>
-	<img src="/src/assets/printscreen/minimal.jpeg" alt="Design minimal" width="300"/>
-</div>
-
 ## Dependências instaladas
 
 ```
